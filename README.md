@@ -40,4 +40,7 @@ There will be tests. To run them enter npm run test.
 
 ## Deployment
 
-There will be more details here. Also the link.
+There will be more details here. 
+
+## Links
+- Back End repository: https://github.com/Eleni-Ke/capstone_project_BE.git
