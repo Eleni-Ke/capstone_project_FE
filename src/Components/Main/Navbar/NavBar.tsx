@@ -4,6 +4,7 @@ import { IoPeopleCircleOutline } from "react-icons/io5";
 import { GrMapLocation } from "react-icons/gr";
 import { GiSewingString, GiNotebook } from "react-icons/gi";
 import { TbCirclesRelation } from "react-icons/tb";
+import { RiLogoutCircleLine } from "react-icons/ri";
 
 const NavBar = () => {
   return (
@@ -30,6 +31,9 @@ const NavBar = () => {
         </Nav.Link>
         <Nav.Link href="#">
           <TbCirclesRelation />
+        </Nav.Link>
+        <Nav.Link href="/" className="logout-btn">
+          <RiLogoutCircleLine />
         </Nav.Link>
       </Navbar.Collapse>
     </Navbar>
