@@ -1,12 +1,80 @@
 /* NAVBAR */
 
 .navbar {
-  background-color: rgb(221, 188, 188);
-  width: 6rem;
+  background-color: rgb(194, 193, 193);
+  width: 8rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   color: black;
+}
+
+.navbar svg {
+  font-size: 4rem;
+  margin-inline: center;
+  color: black;
+  margin-bottom: 1rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: rgb(230, 227, 227);
+}
+
+/* HOME */
+.home-main {
+  width: 100%;
+  background-color: rgba(73, 142, 73, 0.486);
+  padding-top: 2rem;
+}
+
+h1 {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 1rem 1.5rem;
+  background-color: aliceblue;
+  border: 1.5px solid rgb(128, 188, 241);
+  border-radius: 20px;
+}
+
+.place-image {
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 55%;
+  left: 57%;
+}
+
+.character-image {
+  width: 18rem;
+  height: 18rem;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 60%;
+  left: 15%;
+}
+
+.scene-image {
+  width: 16rem;
+  height: 16rem;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 35%;
+}
+
+.quote {
+  padding: 2rem;
+  width: 16rem;
+  border-radius: 50px;
+  background-color: antiquewhite;
+  position: absolute;
+  top: 20%;
+  left: 75%;
 }
 
 /* BANNER */
@@ -29,6 +97,23 @@
   background-image: url(https://as1.ftcdn.net/v2/jpg/00/91/50/18/1000_F_91501890_eRy2gFczgLI2mAkpbwm0vvpwIsbn6x1a.jpg);
   background-size: cover;
   min-height: 88%;
+}
+
+/* MAIN CHARACTERS */
+.main-characters {
+  background-color: rgba(255, 221, 227, 0.564);
+  background-size: cover;
+  min-height: 88%;
+}
+
+.relationships-icon {
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+  font-size: 4rem;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
 }
 
 /* SINGLE CARDS */

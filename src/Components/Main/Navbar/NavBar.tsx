@@ -1,15 +1,36 @@
 import { Nav, Navbar } from "react-bootstrap";
+import { GiSpellBook } from "react-icons/gi";
+import { IoPeopleCircleOutline } from "react-icons/io5";
+import { GrMapLocation } from "react-icons/gr";
+import { GiSewingString, GiNotebook } from "react-icons/gi";
+import { TbCirclesRelation } from "react-icons/tb";
 
 const NavBar = () => {
   return (
     <Navbar className="navbar flex-column sticky-top">
-      <Navbar.Brand href="/home">Logo</Navbar.Brand>
+      <Navbar.Brand href="/home" className="mx-auto">
+        <GiSpellBook />
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="navbar-icons d-flex flex-column">
-          <Nav.Link href="/characters">Characters</Nav.Link>
-          <Nav.Link href="/places">Places</Nav.Link>
-        </Nav>
+      <Navbar.Collapse
+        id="basic-navbar-nav"
+        className="justify-content-end navbar-icons flex-column"
+      >
+        <Nav.Link href="/characters">
+          <IoPeopleCircleOutline />
+        </Nav.Link>
+        <Nav.Link href="/places">
+          <GrMapLocation />
+        </Nav.Link>
+        <Nav.Link href="#">
+          <GiSewingString />
+        </Nav.Link>
+        <Nav.Link href="#">
+          <GiNotebook />
+        </Nav.Link>
+        <Nav.Link href="#">
+          <TbCirclesRelation />
+        </Nav.Link>
       </Navbar.Collapse>
     </Navbar>
   );
