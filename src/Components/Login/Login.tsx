@@ -71,11 +71,15 @@ const Login = () => {
             Login
           </Button>
 
-          <Button variant="outline-primary" type="submit">
+          <Button
+            variant="outline-primary"
+            type="submit"
+            href={`${process.env.REACT_APP_BE_URL}/users/googleLogin`}
+          >
             Login with Google
           </Button>
 
-          <Button variant="primary" href="/Registration">
+          <Button variant="primary" href="/registration">
             Not a member yet? Register here!
           </Button>
         </Form>

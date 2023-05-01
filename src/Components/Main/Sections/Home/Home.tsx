@@ -1,9 +1,43 @@
+import Cookies from "js-cookie";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../../../redux/hooks";
+import { setCurrentUser } from "../../../../redux/actions";
+import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import NavBar from "../../Navbar/NavBar";
 
 const Home = () => {
   let currentUser = useAppSelector((state) => state.currentUser.currentUser);
+
+  const dispatch = useAppDispatch();
+
+  const getMeInfo = async () => {
+    try {
+      const accessToken = localStorage.getItem("accessToken");
+      let res = await fetch(`${process.env.REACT_APP_BE_URL}/users/account`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+      });
+      if (res.ok) {
+        let userInfoFromGoogle = await res.json();
+        dispatch(setCurrentUser(userInfoFromGoogle));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    const tokenCookie = Cookies.get("accessToken");
+    if (tokenCookie) {
+      localStorage.setItem("accessToken", tokenCookie);
+      getMeInfo();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="d-flex">
       <NavBar />

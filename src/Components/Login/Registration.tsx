@@ -83,8 +83,15 @@ const Registration = () => {
             Register now
           </Button>
 
-          <Button variant="outline-primary" type="submit">
+          <Button
+            variant="outline-primary"
+            type="submit"
+            href={`${process.env.REACT_APP_BE_URL}/users/googleLogin`}
+          >
             Register with Google
+          </Button>
+          <Button variant="primary" href="/">
+            Already a member? Login here!
           </Button>
         </Form>
       </div>
