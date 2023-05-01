@@ -4,30 +4,32 @@ import { useNavigate } from "react-router";
 import { setCurrentUser } from "../../redux/actions";
 import { useAppDispatch } from "../../redux/hooks";
 
-const Login = () => {
+const Registration = () => {
   let [userEmail, setUserEmail] = useState("");
   let [userPW, setUserPW] = useState("");
+  let [username, setUsername] = useState("");
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const userLogin = async () => {
-    const userCredentials = {
+    const userRegInfo = {
       email: userEmail,
       password: userPW,
+      username: username,
     };
     try {
-      let res = await fetch(`${process.env.REACT_APP_BE_URL}/users/session`, {
+      let res = await fetch(`${process.env.REACT_APP_BE_URL}/users/account`, {
         method: "POST",
-        body: JSON.stringify(userCredentials),
+        body: JSON.stringify(userRegInfo),
         headers: {
           "Content-Type": "application/json",
         },
       });
       if (res.ok) {
-        const currentUser = await res.json();
-        localStorage.setItem("accessToken", currentUser.accessToken);
-        dispatch(setCurrentUser(currentUser.user));
+        const newUser = await res.json();
+        localStorage.setItem("accessToken", newUser.accessToken);
+        dispatch(setCurrentUser(newUser.user));
         navigate("/home");
       }
     } catch (error) {
@@ -45,6 +47,16 @@ const Login = () => {
             userLogin();
           }}
         >
+          <Form.Group controlId="formBasicUsername">
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              type="username"
+              placeholder="Set your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required={true}
+            />
+          </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
@@ -68,15 +80,11 @@ const Login = () => {
           </Form.Group>
 
           <Button variant="primary" onClick={userLogin}>
-            Login
+            Register now
           </Button>
 
           <Button variant="outline-primary" type="submit">
-            Login with Google
-          </Button>
-
-          <Button variant="primary" href="/Registration">
-            Not a member yet? Register here!
+            Register with Google
           </Button>
         </Form>
       </div>
@@ -95,4 +103,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registration;

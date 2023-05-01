@@ -1,13 +1,16 @@
 import Storage from "redux-persist/lib/storage";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
+import currentUserReducer from "../reducers/currentUserReducer";
 
 const persistConfig = {
   storage: Storage,
   key: "root",
 };
 
-const combinedReducer = combineReducers({});
+const combinedReducer = combineReducers({
+  currentUser: currentUserReducer,
+});
 
 const persistedReducer = persistReducer(persistConfig, combinedReducer);
 

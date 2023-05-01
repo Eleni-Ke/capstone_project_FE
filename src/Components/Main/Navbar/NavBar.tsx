@@ -5,8 +5,26 @@ import { GrMapLocation } from "react-icons/gr";
 import { GiSewingString, GiNotebook } from "react-icons/gi";
 import { TbCirclesRelation } from "react-icons/tb";
 import { RiLogoutCircleLine } from "react-icons/ri";
+import { setCurrentUser } from "../../../redux/actions";
+import { useAppDispatch } from "../../../redux/hooks";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const NavBar = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const logout = () => {
+    const emptyUser = {
+      _id: "",
+      username: "",
+      email: "",
+    };
+    localStorage.removeItem("accessToken");
+    dispatch(setCurrentUser(emptyUser));
+
+    Cookies.remove("accessToken");
+    navigate("/");
+  };
   return (
     <Navbar className="navbar flex-column sticky-top">
       <Navbar.Brand href="/home" className="mx-auto">
@@ -32,7 +50,7 @@ const NavBar = () => {
         <Nav.Link href="#">
           <TbCirclesRelation />
         </Nav.Link>
-        <Nav.Link href="/" className="logout-btn">
+        <Nav.Link onClick={logout} className="logout-btn">
           <RiLogoutCircleLine />
         </Nav.Link>
       </Navbar.Collapse>

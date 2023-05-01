@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../../../redux/hooks";
 import NavBar from "../../Navbar/NavBar";
 
 const Home = () => {
+  let currentUser = useAppSelector((state) => state.currentUser.currentUser);
   return (
     <div className="d-flex">
       <NavBar />
       <div className="home-main">
-        <h1>Welcome to Name of App</h1>
+        <h1>Welcome {currentUser?.username}</h1>
         <Link to="/characters">
           <img
             src="https://cdn.shopify.com/s/files/1/0850/2114/files/tips_to_help_heighten_senses_480x480.png?v=1624399167"
