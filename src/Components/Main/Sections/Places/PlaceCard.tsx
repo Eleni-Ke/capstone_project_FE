@@ -1,8 +1,13 @@
 import { Card } from "react-bootstrap";
+import { CiEdit, CiTrash } from "react-icons/ci";
 
 const PlaceCard = () => {
   return (
     <Card className="single-card">
+      <div className="edit-delete-button">
+        <CiEdit />
+        <CiTrash />
+      </div>
       <Card.Title>NAME OF PLACE</Card.Title>
       <Card.Body>
         <Card.Img src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage.jpg" />

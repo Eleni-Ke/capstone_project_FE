@@ -1,6 +1,6 @@
 import NavBar from "../../Navbar/NavBar";
 import PlaceCard from "./PlaceCard";
-import { BsArrowUpCircle, BsPlusCircle } from "react-icons/bs";
+import PlaceAddModal from "./PlaceAddModal";
 
 const Places = () => {
   return (
@@ -17,10 +17,7 @@ const Places = () => {
           <PlaceCard />
         </div>
       </div>
-      <div className="bottom-right-icons">
-        <BsPlusCircle />
-        <BsArrowUpCircle />
-      </div>
+      <PlaceAddModal />
     </div>
   );
 };

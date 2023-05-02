@@ -1,5 +1,5 @@
-import { BsArrowUpCircle, BsPlusCircle } from "react-icons/bs";
 import NavBar from "../../Navbar/NavBar";
+import CharacterAddModal from "./CharacterAddModal";
 import CharacterCard from "./CharacterCard";
 
 const Characters = () => {
@@ -17,10 +17,7 @@ const Characters = () => {
           <CharacterCard />
         </div>
       </div>
-      <div className="bottom-right-icons">
-        <BsPlusCircle />
-        <BsArrowUpCircle />
-      </div>
+      <CharacterAddModal />
     </div>
   );
 };

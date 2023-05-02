@@ -1,9 +1,14 @@
 import { Card } from "react-bootstrap";
+import { CiEdit, CiTrash } from "react-icons/ci";
 import { TbSitemap } from "react-icons/tb";
 
 const CharacterCard = () => {
   return (
     <Card className="single-card">
+      <div className="edit-delete-button">
+        <CiEdit />
+        <CiTrash />
+      </div>
       <Card.Title>NAME</Card.Title>
       <Card.Body>
         <Card.Img src="https://cdn.shopify.com/s/files/1/0850/2114/files/tips_to_help_heighten_senses_480x480.png?v=1624399167" />
