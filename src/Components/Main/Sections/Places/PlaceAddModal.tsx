@@ -1,13 +1,40 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { BsArrowUpCircle, BsPlusCircle } from "react-icons/bs";
+import { addPlace } from "../../../../redux/actions/placeActions";
+import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 
 const PlaceAddModal = () => {
   const [show, setShow] = useState(false);
+  let [placeName, setPlaceName] = useState("");
+  let [placeDescription, setPlaceDescription] = useState("");
+
+  const accessToken = localStorage.getItem("accessToken");
+
+  let currentUserInfo = useAppSelector(
+    (state) => state.currentUser.currentUser
+  );
+
+  const dispatch = useAppDispatch();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const addNewPlace = () => {
+    dispatch(
+      addPlace(
+        {
+          placeName: placeName,
+          description: placeDescription,
+          creator: currentUserInfo._id,
+        },
+        accessToken!
+      )
+    );
+    setPlaceName("");
+    setPlaceDescription("");
+    handleClose();
+  };
   return (
     <>
       <div className="bottom-right-icons">
@@ -29,8 +56,8 @@ const PlaceAddModal = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter name"
-                //value={userEmail}
-                //onChange={(e) => setUserEmail(e.target.value)}
+                value={placeName}
+                onChange={(e) => setPlaceName(e.target.value)}
                 required={true}
               />
             </Form.Group>
@@ -39,8 +66,8 @@ const PlaceAddModal = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter description"
-                //value={userEmail}
-                //onChange={(e) => setUserEmail(e.target.value)}
+                value={placeDescription}
+                onChange={(e) => setPlaceDescription(e.target.value)}
                 required={true}
               />
             </Form.Group>
@@ -50,7 +77,7 @@ const PlaceAddModal = () => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={addNewPlace}>
             Save place
           </Button>
         </Modal.Footer>
