@@ -14,13 +14,15 @@ const NavBar = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const logout = () => {
-    const emptyUser = {
-      _id: "",
-      username: "",
-      email: "",
-    };
+    // const emptyUser = {
+    //   _id: "",
+    //   username: "",
+    //   email: "",
+    // };
     localStorage.removeItem("accessToken");
-    dispatch(setCurrentUser(emptyUser));
+    dispatch({
+      type: "GET_CHARACTERS",
+    });
 
     Cookies.remove("accessToken");
     navigate("/");

@@ -1,8 +1,13 @@
 import { Card } from "react-bootstrap";
 import { CiEdit, CiTrash } from "react-icons/ci";
 import { TbSitemap } from "react-icons/tb";
+import { ICharacter } from "../../../../redux/interfaces/ICharacter";
 
-const CharacterCard = () => {
+interface IProps {
+  character: ICharacter;
+}
+
+const CharacterCard = (props: IProps) => {
   return (
     <Card className="single-card">
       <div className="edit-delete-button">

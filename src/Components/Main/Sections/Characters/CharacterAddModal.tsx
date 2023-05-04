@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { BsArrowUpCircle, BsPlusCircle } from "react-icons/bs";
-import { addCharacter } from "../../../../redux/actions/characterActions";
+import {
+  addCharacter,
+  getAllCharacters,
+} from "../../../../redux/actions/characterActions";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 
 const CharacterAddModal = () => {
@@ -33,6 +36,7 @@ const CharacterAddModal = () => {
     );
     setName("");
     setDescription("");
+    dispatch(getAllCharacters(accessToken!));
     handleClose();
   };
 

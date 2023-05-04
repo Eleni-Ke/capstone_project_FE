@@ -2,6 +2,7 @@ import Storage from "redux-persist/lib/storage";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import currentUserReducer from "../reducers/currentUserReducer";
+import charactersReducer from "../reducers/charactersReducer";
 
 const persistConfig = {
   storage: Storage,
@@ -10,6 +11,7 @@ const persistConfig = {
 
 const combinedReducer = combineReducers({
   currentUser: currentUserReducer,
+  characters: charactersReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, combinedReducer);

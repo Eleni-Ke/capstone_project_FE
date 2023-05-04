@@ -3,7 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./Components/Login/Login";
 import Home from "./Components/Main/Sections/Home/Home";
-import Characters from "./Components/Main/Sections/Characters/Caracters";
+import Characters from "./Components/Main/Sections/Characters/Characters";
 import Places from "./Components/Main/Sections/Places/Places";
 import Registration from "./Components/Login/Registration";
 
