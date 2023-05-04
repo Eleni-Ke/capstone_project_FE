@@ -1,5 +1,9 @@
+export const GET_PLACES = "GET_PLACES";
+export const POST_PLACE = "POST_PLACE";
+export const RESET_PLACES = "RESET_PLACES";
+
 export const addPlace = (newPlace: any, accessToken: string) => {
-  return async () => {
+  return async (dispatch: any) => {
     try {
       const res = await fetch(`${process.env.REACT_APP_BE_URL}/places`, {
         method: "POST",
@@ -11,7 +15,10 @@ export const addPlace = (newPlace: any, accessToken: string) => {
       });
       if (res.ok) {
         const data = await res.json();
-        console.log(data);
+        dispatch({
+          type: POST_PLACE,
+          payload: data,
+        });
       }
     } catch (error) {
       console.log(error);
@@ -20,7 +27,7 @@ export const addPlace = (newPlace: any, accessToken: string) => {
 };
 
 export const getAllPlaces = (accessToken: string) => {
-  return async () => {
+  return async (dispatch: any) => {
     try {
       const res = await fetch(`${process.env.REACT_APP_BE_URL}/places`, {
         method: "GET",
@@ -30,7 +37,10 @@ export const getAllPlaces = (accessToken: string) => {
       });
       if (res.ok) {
         const data = await res.json();
-        console.log(data);
+        dispatch({
+          type: GET_PLACES,
+          payload: data,
+        });
       }
     } catch (error) {
       console.log(error);

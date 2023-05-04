@@ -16,15 +16,16 @@ const CharacterCard = (props: IProps) => {
       </div>
       <Card.Title>{props.character.name}</Card.Title>
       <Card.Body>
-        <Card.Img src="https://cdn.shopify.com/s/files/1/0850/2114/files/tips_to_help_heighten_senses_480x480.png?v=1624399167" />
+        {props.character.images.length > 0 ? (
+          <Card.Img src={props.character.images[0]} />
+        ) : (
+          <Card.Img src="https://static.vecteezy.com/system/resources/previews/009/734/564/original/default-avatar-profile-icon-of-social-media-user-vector.jpg" />
+        )}
         <div>
           <ul>
             <li>Description: {props.character.description}</li>
-            <li>Looks: blablabla</li>
-            <li>
-              Description: description of the character in some words. Blabla
-              blablablabla
-            </li>
+            <li>ID: {props.character._id}</li>
+
             <li>Smells: blabla blabla blabla</li>
             <li>Other: blabla blabla blabla</li>
             <li>Relationship with: bla, blaa and blaaa</li>
