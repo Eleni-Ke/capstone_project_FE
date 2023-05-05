@@ -19,6 +19,7 @@ export const addPlace = (newPlace: any, accessToken: string) => {
           type: POST_PLACE,
           payload: data,
         });
+        console.log("New Place: ", data);
       }
     } catch (error) {
       console.log(error);

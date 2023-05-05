@@ -9,6 +9,8 @@ import { setCurrentUser } from "../../../redux/actions";
 import { useAppDispatch } from "../../../redux/hooks";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import { RESET_CHARACTERS } from "../../../redux/actions/characterActions";
+import { RESET_PLACES } from "../../../redux/actions/placeActions";
 
 const NavBar = () => {
   const dispatch = useAppDispatch();
@@ -21,7 +23,10 @@ const NavBar = () => {
     // };
     localStorage.removeItem("accessToken");
     dispatch({
-      type: "GET_CHARACTERS",
+      type: RESET_CHARACTERS,
+    });
+    dispatch({
+      type: RESET_PLACES,
     });
 
     Cookies.remove("accessToken");

@@ -19,6 +19,7 @@ export const addCharacter = (newCharacter: any, accessToken: string) => {
           type: POST_CHARACTER,
           payload: data,
         });
+        console.log("New Character: ", data);
       }
     } catch (error) {
       console.log(error);
