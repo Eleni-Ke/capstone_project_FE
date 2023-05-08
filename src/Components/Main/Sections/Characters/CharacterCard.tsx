@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Button, Card, Modal } from "react-bootstrap";
-import { CiEdit, CiTrash } from "react-icons/ci";
+import { CiTrash } from "react-icons/ci";
+import { MdOutlinePhotoCamera } from "react-icons/md";
 import { TbSitemap } from "react-icons/tb";
 import {
+  addCharacterImage,
   deleteCharacter,
   getAllCharacters,
 } from "../../../../redux/actions/characterActions";
@@ -21,6 +23,16 @@ const CharacterCard = (props: IProps) => {
 
   const dispatch = useAppDispatch();
   const accessToken = localStorage.getItem("accessToken");
+
+  const addImage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(
+      addCharacterImage(
+        props.character._id,
+        event.target.files?.[0],
+        accessToken!
+      )
+    );
+  };
 
   const deleteCurrentCharacter = () => {
     dispatch(deleteCharacter(props.character._id, accessToken!));
@@ -53,11 +65,18 @@ const CharacterCard = (props: IProps) => {
         </div>
         <Card.Title>{props.character.name}</Card.Title>
         <Card.Body>
-          {props.character.images.length > 0 ? (
-            <Card.Img src={props.character.images[0]} />
-          ) : (
-            <Card.Img src="https://static.vecteezy.com/system/resources/previews/009/734/564/original/default-avatar-profile-icon-of-social-media-user-vector.jpg" />
-          )}
+          <div>
+            {props.character.images.length > 0 ? (
+              <Card.Img src={props.character.images[0]} />
+            ) : (
+              <Card.Img src="https://static.vecteezy.com/system/resources/previews/009/734/564/original/default-avatar-profile-icon-of-social-media-user-vector.jpg" />
+            )}
+            <label className="change-avatar-input">
+              {" "}
+              <MdOutlinePhotoCamera />
+              <input className="input" type="file" onChange={addImage} />
+            </label>
+          </div>
           <div>
             <ul>
               <li>Description: {props.character.description}</li>

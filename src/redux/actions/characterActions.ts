@@ -124,3 +124,35 @@ export const deleteCharacter = (characterId: string, accessToken: string) => {
     }
   };
 };
+
+export const addCharacterImage = (
+  characterId: string,
+  image: any,
+  accessToken: string
+) => {
+  return async (dispatch: any) => {
+    try {
+      const formData = new FormData();
+      formData.append("characterImage", image);
+      let res = await fetch(
+        `${process.env.REACT_APP_BE_URL}/characters/${characterId}/image`,
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      if (res.ok) {
+        const data = res.json();
+        console.log(data);
+        dispatch(getAllCharacters(accessToken));
+      } else {
+        console.log("There has been an error uploading the image.");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
