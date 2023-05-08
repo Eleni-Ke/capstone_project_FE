@@ -100,20 +100,23 @@ export const changePlace = (
 };
 
 export const deletePlace = (placeId: string, accessToken: string) => {
-  return async () => {
+  return async (dispatch: any) => {
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_BE_URL}/places/:${placeId}`,
+        `${process.env.REACT_APP_BE_URL}/places/${placeId}`,
         {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${accessToken}`,
+            "Content-type": "application/json",
           },
         }
       );
       if (res.ok) {
         const data = await res.json();
         console.log(data);
+      } else {
+        console.log("try again!");
       }
     } catch (error) {
       console.log(error);
