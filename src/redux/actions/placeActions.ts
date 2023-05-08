@@ -115,6 +115,7 @@ export const deletePlace = (placeId: string, accessToken: string) => {
       if (res.ok) {
         const data = await res.json();
         console.log(data);
+        dispatch(getAllPlaces(accessToken));
       } else {
         console.log("try again!");
       }

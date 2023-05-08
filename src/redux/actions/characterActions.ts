@@ -53,7 +53,7 @@ export const getOneCharacter = (characterId: string, accessToken: string) => {
   return async () => {
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_BE_URL}/characters/:${characterId}`,
+        `${process.env.REACT_APP_BE_URL}/characters/${characterId}`,
         {
           method: "GET",
           headers: {
@@ -79,7 +79,7 @@ export const changeCharacter = (
   return async () => {
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_BE_URL}/characters/:${characterId}`,
+        `${process.env.REACT_APP_BE_URL}/characters/${characterId}`,
         {
           method: "PUT",
           body: JSON.stringify(characterChange),
@@ -100,20 +100,24 @@ export const changeCharacter = (
 };
 
 export const deleteCharacter = (characterId: string, accessToken: string) => {
-  return async () => {
+  return async (dispatch: any) => {
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_BE_URL}/characters/:${characterId}`,
+        `${process.env.REACT_APP_BE_URL}/characters/${characterId}`,
         {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${accessToken}`,
+            "Content-type": "application/json",
           },
         }
       );
       if (res.ok) {
         const data = await res.json();
         console.log(data);
+        dispatch(getAllCharacters(accessToken));
+      } else {
+        console.log("try again!");
       }
     } catch (error) {
       console.log(error);
