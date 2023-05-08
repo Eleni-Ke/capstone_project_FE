@@ -1,27 +1,35 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import { BsArrowUpCircle, BsPlusCircle } from "react-icons/bs";
+import { CiEdit } from "react-icons/ci";
 import {
-  addCharacter,
   getAllCharacters,
+  putCharacter,
 } from "../../../../redux/actions/characterActions";
 import { useAppDispatch } from "../../../../redux/hooks";
+import { ICharacter } from "../../../../redux/interfaces/ICharacter";
 
-const CharacterAddModal = () => {
-  const [show, setShow] = useState(false);
-  let [name, setName] = useState("");
-  let [description, setDescription] = useState("");
+interface IProps {
+  character: ICharacter;
+}
 
+const CharacterChangeModal = (props: IProps) => {
   const accessToken = localStorage.getItem("accessToken");
 
   const dispatch = useAppDispatch();
+  const currentCharacter = props.character;
+
+  const [show, setShow] = useState(false);
+
+  let [name, setName] = useState(currentCharacter.name);
+  let [description, setDescription] = useState(currentCharacter.description);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const addNewCharacter = () => {
+  const changeCharacter = () => {
     dispatch(
-      addCharacter(
+      putCharacter(
+        currentCharacter._id,
         {
           name: name,
           description: description,
@@ -29,32 +37,22 @@ const CharacterAddModal = () => {
         accessToken!
       )
     );
-    setName("");
-    setDescription("");
     dispatch(getAllCharacters(accessToken!));
     handleClose();
   };
-
   return (
     <>
-      <div className="bottom-right-icons">
-        <button onClick={handleShow}>
-          <BsPlusCircle />
-        </button>
-        <button>
-          <a href="#top">
-            <BsArrowUpCircle />
-          </a>
-        </button>
-      </div>
+      <button onClick={handleShow}>
+        <CiEdit />
+      </button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add a character here!</Modal.Title>
+          <Modal.Title>Change the character here!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group controlId="formCharacterName">
-              <Form.Label>Name *</Form.Label>
+            <Form.Group controlId="formChangeCharacterName">
+              <Form.Label>Name </Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter name"
@@ -63,8 +61,8 @@ const CharacterAddModal = () => {
                 required={true}
               />
             </Form.Group>
-            <Form.Group controlId="formCharacterDescription">
-              <Form.Label>Description *</Form.Label>
+            <Form.Group controlId="formChangeCharacterDescription">
+              <Form.Label>Description</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter description"
@@ -79,7 +77,7 @@ const CharacterAddModal = () => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={addNewCharacter}>
+          <Button variant="primary" onClick={changeCharacter}>
             Save character
           </Button>
         </Modal.Footer>
@@ -88,4 +86,4 @@ const CharacterAddModal = () => {
   );
 };
 
-export default CharacterAddModal;
+export default CharacterChangeModal;

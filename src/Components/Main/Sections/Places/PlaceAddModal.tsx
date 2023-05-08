@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { BsArrowUpCircle, BsPlusCircle } from "react-icons/bs";
-import { addPlace } from "../../../../redux/actions/placeActions";
+import { addPlace, getAllPlaces } from "../../../../redux/actions/placeActions";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 
 const PlaceAddModal = () => {
@@ -33,6 +33,7 @@ const PlaceAddModal = () => {
     );
     setPlaceName("");
     setPlaceDescription("");
+    dispatch(getAllPlaces(accessToken!));
     handleClose();
   };
   return (

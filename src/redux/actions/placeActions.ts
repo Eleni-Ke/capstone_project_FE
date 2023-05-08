@@ -71,7 +71,7 @@ export const getOnePlace = (placeId: string, accessToken: string) => {
   };
 };
 
-export const changePlace = (
+export const putPlace = (
   placeId: string,
   placeChange: any,
   accessToken: string
@@ -79,7 +79,7 @@ export const changePlace = (
   return async () => {
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_BE_URL}/places/:${placeId}`,
+        `${process.env.REACT_APP_BE_URL}/places/${placeId}`,
         {
           method: "PUT",
           body: JSON.stringify(placeChange),

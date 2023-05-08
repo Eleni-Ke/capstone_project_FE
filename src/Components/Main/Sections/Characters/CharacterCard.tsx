@@ -8,6 +8,7 @@ import {
 } from "../../../../redux/actions/characterActions";
 import { useAppDispatch } from "../../../../redux/hooks";
 import { ICharacter } from "../../../../redux/interfaces/ICharacter";
+import CharacterChangeModal from "./CharacterChangeModal";
 
 interface IProps {
   character: ICharacter;
@@ -45,7 +46,7 @@ const CharacterCard = (props: IProps) => {
       </Modal>
       <Card className="single-card">
         <div className="edit-delete-button">
-          <CiEdit />
+          <CharacterChangeModal character={props.character} />
           <button onClick={handleShow}>
             <CiTrash />
           </button>

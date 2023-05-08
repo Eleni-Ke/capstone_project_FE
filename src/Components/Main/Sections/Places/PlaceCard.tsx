@@ -7,6 +7,7 @@ import {
   deletePlace,
   getAllPlaces,
 } from "../../../../redux/actions/placeActions";
+import PlaceChangeModal from "./PlaceChangeModal";
 
 interface IProps {
   place: IPlace;
@@ -42,7 +43,7 @@ const PlaceCard = (props: IProps) => {
       </Modal>
       <Card className="single-card">
         <div className="edit-delete-button">
-          <CiEdit />
+          <PlaceChangeModal place={props.place} />
           <button onClick={handleShow}>
             <CiTrash />
           </button>

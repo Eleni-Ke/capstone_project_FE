@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER } from "../actions";
+import { RESET_CURRENT_USER, SET_CURRENT_USER } from "../actions";
 
 const initialState = {
   currentUser: {},
@@ -11,6 +11,8 @@ const currentUserReducer = (state = initialState, action: any) => {
         ...state,
         currentUser: action.payload,
       };
+    case RESET_CURRENT_USER:
+      return initialState;
     default:
       return state;
   }

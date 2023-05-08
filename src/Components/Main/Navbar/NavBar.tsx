@@ -5,7 +5,7 @@ import { GrMapLocation } from "react-icons/gr";
 import { GiSewingString, GiNotebook } from "react-icons/gi";
 import { TbCirclesRelation } from "react-icons/tb";
 import { RiLogoutCircleLine } from "react-icons/ri";
-import { setCurrentUser } from "../../../redux/actions";
+import { RESET_CURRENT_USER, setCurrentUser } from "../../../redux/actions";
 import { useAppDispatch } from "../../../redux/hooks";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
@@ -16,17 +16,15 @@ const NavBar = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const logout = () => {
-    // const emptyUser = {
-    //   _id: "",
-    //   username: "",
-    //   email: "",
-    // };
     localStorage.removeItem("accessToken");
     dispatch({
       type: RESET_CHARACTERS,
     });
     dispatch({
       type: RESET_PLACES,
+    });
+    dispatch({
+      type: RESET_CURRENT_USER,
     });
 
     Cookies.remove("accessToken");

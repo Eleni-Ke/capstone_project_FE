@@ -71,7 +71,7 @@ export const getOneCharacter = (characterId: string, accessToken: string) => {
   };
 };
 
-export const changeCharacter = (
+export const putCharacter = (
   characterId: string,
   characterChange: any,
   accessToken: string
