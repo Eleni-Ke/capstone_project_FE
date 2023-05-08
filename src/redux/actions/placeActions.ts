@@ -124,3 +124,35 @@ export const deletePlace = (placeId: string, accessToken: string) => {
     }
   };
 };
+
+export const addPlaceImage = (
+  placeId: string,
+  image: any,
+  accessToken: string
+) => {
+  return async (dispatch: any) => {
+    try {
+      const formData = new FormData();
+      formData.append("placeImage", image);
+      let res = await fetch(
+        `${process.env.REACT_APP_BE_URL}/places/${placeId}/image`,
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      if (res.ok) {
+        const data = res.json();
+        console.log(data);
+        dispatch(getAllPlaces(accessToken));
+      } else {
+        console.log("There has been an error uploading the image.");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

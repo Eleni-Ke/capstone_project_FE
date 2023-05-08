@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Button, Card, Modal } from "react-bootstrap";
-import { CiEdit, CiTrash } from "react-icons/ci";
+import { CiTrash } from "react-icons/ci";
 import { useAppDispatch } from "../../../../redux/hooks";
 import { IPlace } from "../../../../redux/interfaces/IPlace";
 import {
+  addPlaceImage,
   deletePlace,
   getAllPlaces,
 } from "../../../../redux/actions/placeActions";
 import PlaceChangeModal from "./PlaceChangeModal";
+import { MdOutlinePhotoCamera } from "react-icons/md";
 
 interface IProps {
   place: IPlace;
@@ -20,6 +22,12 @@ const PlaceCard = (props: IProps) => {
 
   const dispatch = useAppDispatch();
   const accessToken = localStorage.getItem("accessToken");
+
+  const addImage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(
+      addPlaceImage(props.place._id, event.target.files?.[0], accessToken!)
+    );
+  };
 
   const deleteCurrentPlace = () => {
     dispatch(deletePlace(props.place._id, accessToken!));
@@ -50,12 +58,18 @@ const PlaceCard = (props: IProps) => {
         </div>
         <Card.Title>{props.place.placeName}</Card.Title>
         <Card.Body>
-          {props.place.images.length > 0 ? (
-            <Card.Img src={props.place.images[0]} />
-          ) : (
-            <Card.Img src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage.jpg" />
-          )}
-
+          <div>
+            {props.place.images.length > 0 ? (
+              <Card.Img src={props.place.images[0]} />
+            ) : (
+              <Card.Img src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage.jpg" />
+            )}
+            <label className="change-avatar-input">
+              {" "}
+              <MdOutlinePhotoCamera />
+              <input className="input" type="file" onChange={addImage} />
+            </label>
+          </div>
           <div>
             <ul>
               <li>Description: {props.place.description}</li>
