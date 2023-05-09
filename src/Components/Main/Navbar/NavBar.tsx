@@ -5,7 +5,7 @@ import { GrMapLocation } from "react-icons/gr";
 import { GiSewingString, GiNotebook } from "react-icons/gi";
 import { TbCirclesRelation } from "react-icons/tb";
 import { RiLogoutCircleLine } from "react-icons/ri";
-import { RESET_CURRENT_USER, setCurrentUser } from "../../../redux/actions";
+import { RESET_CURRENT_USER } from "../../../redux/actions";
 import { useAppDispatch } from "../../../redux/hooks";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
@@ -46,7 +46,7 @@ const NavBar = () => {
         <Nav.Link href="/places">
           <GrMapLocation />
         </Nav.Link>
-        <Nav.Link href="#">
+        <Nav.Link href="/storyLine">
           <GiSewingString />
         </Nav.Link>
         <Nav.Link href="#">

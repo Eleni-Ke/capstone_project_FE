@@ -6,6 +6,7 @@ import Home from "./Components/Main/Sections/Home/Home";
 import Characters from "./Components/Main/Sections/Characters/Characters";
 import Places from "./Components/Main/Sections/Places/Places";
 import Registration from "./Components/Login/Registration";
+import StoryLine from "./Components/Main/Sections/StoryLine/StoryLine";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/characters" element={<Characters />} />
         <Route path="/places" element={<Places />} />
+        <Route path="storyLine" element={<StoryLine />} />
       </Routes>
     </BrowserRouter>
   );
