@@ -25,7 +25,7 @@ const Places = () => {
         <div className="main-section main-places">
           {allPlaces && allPlaces.length > 0 ? (
             allPlaces.map((place: any) => {
-              return <PlaceCard place={place} />;
+              return <PlaceCard place={place} key={place._id} />;
             })
           ) : (
             <p>Create your first Place here!</p>

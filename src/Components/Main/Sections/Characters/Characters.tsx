@@ -25,7 +25,9 @@ const Characters = () => {
         <div className="main-section main-characters">
           {allCharacters && allCharacters.length > 0 ? (
             allCharacters.map((character: any) => {
-              return <CharacterCard character={character} />;
+              return (
+                <CharacterCard character={character} key={character._id} />
+              );
             })
           ) : (
             <p> Create your first Character here!</p>

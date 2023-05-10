@@ -65,14 +65,13 @@ const CharacterCard = (props: IProps) => {
         </div>
         <Card.Title>{props.character.name}</Card.Title>
         <Card.Body>
-          <div>
+          <div className="card-image">
             {props.character.images.length > 0 ? (
               <Card.Img src={props.character.images[0]} />
             ) : (
               <Card.Img src="https://static.vecteezy.com/system/resources/previews/009/734/564/original/default-avatar-profile-icon-of-social-media-user-vector.jpg" />
             )}
             <label className="change-avatar-input">
-              {" "}
               <MdOutlinePhotoCamera />
               <input className="input" type="file" onChange={addImage} />
             </label>
@@ -81,10 +80,6 @@ const CharacterCard = (props: IProps) => {
             <ul>
               <li>Description: {props.character.description}</li>
               <li>ID: {props.character._id}</li>
-
-              <li>Smells: blabla blabla blabla</li>
-              <li>Other: blabla blabla blabla</li>
-              <li>Relationship with: bla, blaa and blaaa</li>
             </ul>
           </div>
           <TbSitemap className="relationships-icon" />

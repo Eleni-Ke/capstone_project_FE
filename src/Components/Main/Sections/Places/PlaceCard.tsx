@@ -58,7 +58,7 @@ const PlaceCard = (props: IProps) => {
         </div>
         <Card.Title>{props.place.placeName}</Card.Title>
         <Card.Body>
-          <div>
+          <div className="card-image">
             {props.place.images.length > 0 ? (
               <Card.Img src={props.place.images[0]} />
             ) : (
@@ -74,10 +74,6 @@ const PlaceCard = (props: IProps) => {
             <ul>
               <li>Description: {props.place.description}</li>
               <li>ID: {props.place._id}</li>
-
-              <li>Smells: blabla blabla blabla</li>
-              <li>Colours: blabla blabla blabla</li>
-              <li>Characters: bla, blaa and blaaa</li>
             </ul>
           </div>
         </Card.Body>
