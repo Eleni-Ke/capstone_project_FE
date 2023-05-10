@@ -89,7 +89,9 @@ const CharacterCard = (props: IProps) => {
               </li>
             </ul>
           </div>
-          <TbSitemap className="relationships-icon" />
+          <a href="/characters/relationships">
+            <TbSitemap className="relationships-icon" />
+          </a>
         </Card.Body>
       </Card>
     </>

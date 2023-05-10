@@ -96,6 +96,13 @@
   margin-top: 2.5rem;
 }
 
+/* STORY LINE */
+
+.storyLine-main {
+  width: 100%;
+  height: 100%;
+}
+
 /* MAIN PLACES */
 .main-places {
   background-image: url(https://as1.ftcdn.net/v2/jpg/00/91/50/18/1000_F_91501890_eRy2gFczgLI2mAkpbwm0vvpwIsbn6x1a.jpg);
