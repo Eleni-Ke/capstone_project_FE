@@ -111,7 +111,9 @@
 }
 
 .main-characters .single-card {
-  background-color: aliceblue;
+  background-color: #fffaef;
+  border-bottom: 3px solid #86847f;
+  border-left: 3px solid #fffaef;
 }
 
 .relationships-icon {
@@ -129,18 +131,22 @@
   width: 85%;
   margin-inline: auto;
   margin-top: 5rem;
-  border-radius: 1rem !important;
+  border-radius: 10px !important;
+
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .single-card .card-title {
   text-align: center;
-  font-size: 2rem;
-  margin-top: -2.5rem;
+  font-size: 2.2rem;
+  margin-top: -3.5rem;
+  margin-bottom: 2rem;
 }
 
 .single-card .card-body {
   display: flex;
   margin: 2rem;
+  margin-top: 0;
 }
 
 .single-card .card-image {
@@ -150,8 +156,18 @@
   padding: 5px;
   background-color: antiquewhite;
   margin-right: 2rem;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  transform: rotate(-5deg) translateY(-30px);
+  box-shadow: -2px 3px 6px 3px rgba(0, 0, 0, 0.42);
+
+  transform: rotate(-5deg) translateY(-20px);
+  transition: all 0.2s linear;
+}
+
+.single-card .card-image:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    -2px 8px 9px 1px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, -2px 8px 9px 1px rgba(0, 0, 0, 0);
 }
 
 .single-card .card-img {
@@ -174,9 +190,10 @@
 }
 
 .single-card .card-text {
-  margin-left: 2rem;
-  margin-top: 1.5rem;
-  font-size: 1.5rem;
+  margin-top: 0;
+  font-size: 1.2rem;
+  height: 25rem;
+  overflow: auto;
 }
 
 .edit-delete-button {

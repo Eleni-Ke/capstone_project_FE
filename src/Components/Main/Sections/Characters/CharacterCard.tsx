@@ -76,10 +76,17 @@ const CharacterCard = (props: IProps) => {
               <input className="input" type="file" onChange={addImage} />
             </label>
           </div>
-          <div>
+          <div className="card-text">
             <ul>
-              <li>Description: {props.character.description}</li>
-              <li>ID: {props.character._id}</li>
+              <li>
+                {" "}
+                <strong>Description: </strong>
+                {props.character.description}
+              </li>
+              <li>
+                <strong>ID: </strong>
+                {props.character._id}
+              </li>
             </ul>
           </div>
           <TbSitemap className="relationships-icon" />
