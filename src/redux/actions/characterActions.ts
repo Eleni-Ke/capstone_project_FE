@@ -1,3 +1,5 @@
+import { IRelationship } from "../interfaces/IRelationship";
+
 export const GET_CHARACTERS = "GET_CHARACTERS";
 export const POST_CHARACTER = "POST_CHARACTER";
 export const RESET_CHARACTERS = "RESET_CHARACTERS";
@@ -76,7 +78,7 @@ export const putCharacter = (
   characterChange: any,
   accessToken: string
 ) => {
-  return async () => {
+  return async (dispatch: any) => {
     try {
       const res = await fetch(
         `${process.env.REACT_APP_BE_URL}/characters/${characterId}`,
@@ -91,6 +93,7 @@ export const putCharacter = (
       );
       if (res.ok) {
         const data = await res.json();
+        dispatch(getAllCharacters(accessToken));
         console.log(data);
       }
     } catch (error) {
@@ -118,6 +121,35 @@ export const deleteCharacter = (characterId: string, accessToken: string) => {
         dispatch(getAllCharacters(accessToken));
       } else {
         console.log("try again!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const addRelationship = (
+  characterId: string,
+  relationships: IRelationship[],
+  accessToken: string
+) => {
+  return async (dispatch: any) => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BE_URL}/characters/${characterId}/relationship`,
+        {
+          method: "POST",
+          body: JSON.stringify({ relationships }),
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        console.log(data);
+        dispatch(getAllCharacters(accessToken));
       }
     } catch (error) {
       console.log(error);

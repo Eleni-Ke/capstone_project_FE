@@ -76,7 +76,7 @@ export const putPlace = (
   placeChange: any,
   accessToken: string
 ) => {
-  return async () => {
+  return async (dispatch: any) => {
     try {
       const res = await fetch(
         `${process.env.REACT_APP_BE_URL}/places/${placeId}`,
@@ -91,6 +91,7 @@ export const putPlace = (
       );
       if (res.ok) {
         const data = await res.json();
+        dispatch(getAllPlaces(accessToken));
         console.log(data);
       }
     } catch (error) {

@@ -8,9 +8,10 @@ import {
   deleteCharacter,
   getAllCharacters,
 } from "../../../../redux/actions/characterActions";
-import { useAppDispatch } from "../../../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import { ICharacter } from "../../../../redux/interfaces/ICharacter";
 import CharacterChangeModal from "./CharacterChangeModal";
+import AddRelationshipModal from "./Relationships/AddRelationshipModal";
 
 interface IProps {
   character: ICharacter;
@@ -23,6 +24,8 @@ const CharacterCard = (props: IProps) => {
 
   const dispatch = useAppDispatch();
   const accessToken = localStorage.getItem("accessToken");
+
+  const allCharacters = useAppSelector((state) => state.characters.characters);
 
   const addImage = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(
@@ -86,6 +89,20 @@ const CharacterCard = (props: IProps) => {
               <li>
                 <strong>ID: </strong>
                 {props.character._id}
+              </li>
+              <li>
+                <strong>Relationships:</strong>
+                {props.character.relationships.map((relationship) => {
+                  const partner = allCharacters.find(
+                    (e: any) => e._id === relationship.partner
+                  );
+                  return (
+                    <p>
+                      {relationship.relationshipType}: {partner.name}
+                    </p>
+                  );
+                })}
+                <AddRelationshipModal character={props.character} />
               </li>
             </ul>
           </div>

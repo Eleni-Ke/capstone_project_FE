@@ -7,16 +7,10 @@ import {
 } from "../../../../redux/actions/characterActions";
 import { useAppDispatch } from "../../../../redux/hooks";
 
-interface IRelationship {
-  partner: string;
-  relationshipType: string;
-}
-
 const CharacterAddModal = () => {
   const [show, setShow] = useState(false);
   let [name, setName] = useState("");
   let [description, setDescription] = useState("");
-  let [relationships, setRelationships] = useState<IRelationship[]>([]);
 
   const accessToken = localStorage.getItem("accessToken");
 
@@ -37,7 +31,7 @@ const CharacterAddModal = () => {
     );
     setName("");
     setDescription("");
-    dispatch(getAllCharacters(accessToken!));
+    // dispatch(getAllCharacters(accessToken!));
     handleClose();
   };
 
