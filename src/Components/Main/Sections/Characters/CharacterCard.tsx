@@ -92,16 +92,21 @@ const CharacterCard = (props: IProps) => {
               </li>
               <li>
                 <strong>Relationships:</strong>
-                {props.character.relationships.map((relationship) => {
-                  const partner = allCharacters.find(
-                    (e: any) => e._id === relationship.partner
-                  );
-                  return (
-                    <p>
-                      {relationship.relationshipType}: {partner.name}
-                    </p>
-                  );
-                })}
+                {props.character.relationships &&
+                  props.character.relationships.map((relationship) => {
+                    const partner = allCharacters.find(
+                      (e: any) => e._id === relationship.partner
+                    );
+                    if (partner) {
+                      return (
+                        <p key={partner._id}>
+                          {relationship.relationshipType}: {partner.name}
+                        </p>
+                      );
+                    } else {
+                      return <p>This partner has just been deleted</p>;
+                    }
+                  })}
                 <AddRelationshipModal character={props.character} />
               </li>
             </ul>
