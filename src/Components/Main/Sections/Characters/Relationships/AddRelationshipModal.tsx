@@ -3,7 +3,6 @@ import { Button, Form, Modal } from "react-bootstrap";
 import { addRelationship } from "../../../../../redux/actions/characterActions";
 import { useAppDispatch, useAppSelector } from "../../../../../redux/hooks";
 import { ICharacter } from "../../../../../redux/interfaces/ICharacter";
-import { IRelationship } from "../../../../../redux/interfaces/IRelationship";
 
 interface IProps {
   character: ICharacter;
