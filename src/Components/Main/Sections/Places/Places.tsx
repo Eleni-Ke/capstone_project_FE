@@ -6,14 +6,8 @@ import { useEffect } from "react";
 import { getAllPlaces } from "../../../../redux/actions/placeActions";
 
 const Places = () => {
-  const dispatch = useAppDispatch();
-  const accessToken = localStorage.getItem("accessToken");
+  ("accessToken");
   const allPlaces = useAppSelector((state) => state.places.places);
-
-  useEffect(() => {
-    dispatch(getAllPlaces(accessToken!));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className="d-flex">

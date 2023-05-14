@@ -52,7 +52,7 @@ const NavBar = () => {
         <Nav.Link href="#">
           <GiNotebook />
         </Nav.Link>
-        <Nav.Link href="#">
+        <Nav.Link href="/characters/relationships">
           <TbCirclesRelation />
         </Nav.Link>
         <Nav.Link onClick={logout} className="logout-btn">

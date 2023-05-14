@@ -6,14 +6,8 @@ import CharacterAddModal from "./CharacterAddModal";
 import CharacterCard from "./CharacterCard";
 
 const Characters = () => {
-  const dispatch = useAppDispatch();
-  const accessToken = localStorage.getItem("accessToken");
+  ("accessToken");
   const allCharacters = useAppSelector((state) => state.characters.characters);
-
-  useEffect(() => {
-    dispatch(getAllCharacters(accessToken!));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className="d-flex">

@@ -49,6 +49,12 @@
   position: absolute;
   top: 55%;
   left: 57%;
+  transition: all linear 0.15s;
+}
+
+.place-image:hover,
+.character-image:hover {
+  border-radius: 5%;
 }
 
 .character-image {
@@ -59,6 +65,7 @@
   position: absolute;
   top: 60%;
   left: 15%;
+  transition: all linear 0.15s;
 }
 
 .scene-image {

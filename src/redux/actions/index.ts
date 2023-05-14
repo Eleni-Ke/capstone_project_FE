@@ -10,6 +10,26 @@ export const setCurrentUser = (currentUser: IUser) => {
   };
 };
 
+export const getMeInfo = (accessToken: string) => {
+  return async (dispatch: any) => {
+    try {
+      let res = await fetch(`${process.env.REACT_APP_BE_URL}/users/account`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+      });
+      if (res.ok) {
+        let userInfo = await res.json();
+        dispatch(setCurrentUser(userInfo));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 // export const getUsers = () => {
 //   return async (dispatch: any) => {
 //     try {
