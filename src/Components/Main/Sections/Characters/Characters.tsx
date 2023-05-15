@@ -12,7 +12,7 @@ const Characters = () => {
   return (
     <div className="d-flex">
       <NavBar />
-      <div className="d-flex flex-column w-100">
+      <div className="d-flex flex-column w-100 position-absolute">
         <div className="banner-characters banner">
           <h2>The Characters</h2>
         </div>

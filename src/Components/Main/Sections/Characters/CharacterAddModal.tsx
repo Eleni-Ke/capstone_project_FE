@@ -31,7 +31,7 @@ const CharacterAddModal = () => {
     );
     setName("");
     setDescription("");
-    // dispatch(getAllCharacters(accessToken!));
+    dispatch(getAllCharacters(accessToken!));
     handleClose();
   };
 

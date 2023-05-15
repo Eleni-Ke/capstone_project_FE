@@ -10,6 +10,12 @@ import InteractiveBackground from "./InteractiveBackground";
 
 const Home = () => {
   let currentUser = useAppSelector((state) => state.currentUser.currentUser);
+  let firstCharacterImage = useAppSelector(
+    (state) => state.characters.characters[0].images[0]
+  );
+  let firstPlaceImage = useAppSelector(
+    (state) => state.places.places[0].images[0]
+  );
 
   const dispatch = useAppDispatch();
   const accessToken = localStorage.getItem("accessToken");
@@ -34,24 +40,36 @@ const Home = () => {
   return (
     <div className="d-flex">
       <NavBar />
-      <div className="home-main">
+      <div className="home-main position-absolute">
         <InteractiveBackground />
         <h1>Welcome {currentUser?.username}</h1>
         <Link to="/characters">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0850/2114/files/tips_to_help_heighten_senses_480x480.png?v=1624399167"
-            alt="character"
-            className="character-image"
-          />
+          {firstCharacterImage ? (
+            <img
+              src={firstCharacterImage}
+              alt="character"
+              className="character-image"
+            />
+          ) : (
+            <img
+              src="https://cdn.shopify.com/s/files/1/0850/2114/files/tips_to_help_heighten_senses_480x480.png?v=1624399167"
+              alt="character"
+              className="character-image"
+            />
+          )}
         </Link>
         <Link to="/places">
-          <img
-            src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage.jpg"
-            alt="place"
-            className="place-image"
-          />
+          {firstPlaceImage ? (
+            <img src={firstPlaceImage} className="place-image" />
+          ) : (
+            <img
+              src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage.jpg"
+              alt="place"
+              className="place-image"
+            />
+          )}
         </Link>
-        <Link to="#">
+        {/* <Link to="#">
           <img
             src="https://c8.alamy.com/compde/cpc302/der-grosse-maskenball-second-empire-zeitraum-kleid-anlasslich-der-veranstaltung-vichy-feiert-napoleon-iii-vichy-cpc302.jpg"
             alt="scene"
@@ -60,7 +78,7 @@ const Home = () => {
         </Link>
         <Link to="#">
           <p className="quote">This is a very interesting quote</p>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

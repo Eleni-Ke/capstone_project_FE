@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Card, Modal } from "react-bootstrap";
+import { Button, Card, Carousel, Modal } from "react-bootstrap";
 import { CiTrash } from "react-icons/ci";
 import { useAppDispatch } from "../../../../redux/hooks";
 import { IPlace } from "../../../../redux/interfaces/IPlace";
@@ -60,7 +60,15 @@ const PlaceCard = (props: IProps) => {
         <Card.Body>
           <div className="card-image">
             {props.place.images.length > 0 ? (
-              <Card.Img src={props.place.images[0]} />
+              <Carousel interval={null}>
+                {props.place.images.map((image) => {
+                  return (
+                    <Carousel.Item>
+                      <img src={image} />
+                    </Carousel.Item>
+                  );
+                })}
+              </Carousel>
             ) : (
               <Card.Img src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage.jpg" />
             )}

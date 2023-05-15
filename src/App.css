@@ -1,13 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+body {
+  cursor: url("https://p7.hiclipart.com/preview/236/967/645/black-quill-pen.jpg"),
+    auto;
+  font-family: "Libre Baskerville", serif;
+}
+
 /* NAVBAR */
 
 .navbar {
-  background-color: rgb(194, 193, 193);
+  background-color: #f4eec0;
+  border-right: 1px solid #89866f;
   width: 8rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: black;
+  box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  margin-left: -7rem;
+  transition: margin-left linear 0.2s;
+  position: fixed;
+  top: 0;
+}
+
+.navbar:hover {
+  margin-left: 0;
 }
 
 .navbar svg {
@@ -29,6 +47,7 @@
 .home-main {
   width: 100%;
   padding-top: 2rem;
+  height: 100vh;
 }
 
 .home-main h1 {
@@ -46,7 +65,7 @@
   object-fit: cover;
   border-radius: 50%;
   position: absolute;
-  top: 55%;
+  top: 25%;
   left: 57%;
   transition: all linear 0.15s;
 }
@@ -62,7 +81,7 @@
   object-fit: cover;
   border-radius: 50%;
   position: absolute;
-  top: 60%;
+  top: 40%;
   left: 15%;
   transition: all linear 0.15s;
 }
@@ -92,7 +111,7 @@
 .banner {
   height: 10rem;
   width: 100%;
-  background-color: rgb(80, 17, 17);
+  background-color: #7e6752;
   color: white;
 }
 
@@ -116,6 +135,12 @@
   min-height: 88%;
 }
 
+.main-places .single-card {
+  background-color: #f4eec0b1;
+  border-bottom: 3px solid #86847f;
+  border-left: 3px solid #86847f;
+}
+
 /* MAIN CHARACTERS */
 .main-characters {
   background-image: url(https://images.unsplash.com/photo-1506968430777-bf7784a87f23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29vZCUyMHRhYmxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80);
@@ -124,9 +149,9 @@
 }
 
 .main-characters .single-card {
-  background-color: #fffaef;
+  background-color: #f4eec0b1;
   border-bottom: 3px solid #86847f;
-  border-left: 3px solid #fffaef;
+  border-left: 3px solid #86847f;
 }
 
 .relationships-icon {
@@ -145,7 +170,6 @@
   margin-inline: auto;
   margin-top: 5rem;
   border-radius: 10px !important;
-
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -162,17 +186,37 @@
   margin-top: 0;
 }
 
+.single-card .carousel-inner {
+  height: 24rem;
+}
+
+.single-card .carousel-item {
+  height: 100%;
+}
+
+.single-card .card-img {
+  height: 24rem;
+  object-fit: contain;
+}
+
 .single-card .card-image {
   width: 23rem;
   border: 2px solid grey;
   text-align: center;
-  padding: 5px;
+  padding: 20px;
   background-color: antiquewhite;
   margin-right: 2rem;
   box-shadow: -2px 3px 6px 3px rgba(0, 0, 0, 0.42);
 
   transform: rotate(-5deg) translateY(-20px);
   transition: all 0.2s linear;
+  object-fit: contain;
+  overflow: hidden;
+  margin: 15px;
+}
+
+.single-card img {
+  height: 100%;
 }
 
 .single-card .card-image:hover {
@@ -181,14 +225,6 @@
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     -2px 8px 9px 1px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, -2px 8px 9px 1px rgba(0, 0, 0, 0);
-}
-
-.single-card .card-img {
-  width: 20rem;
-  height: 20rem;
-  object-fit: cover;
-  overflow: hidden;
-  margin: 15px;
 }
 
 .change-avatar-input {
@@ -200,6 +236,7 @@
 
 .change-avatar-input .input {
   margin-left: 15px;
+  margin-top: 1rem;
 }
 
 .single-card .card-text {
@@ -243,10 +280,10 @@
 }
 
 .bottom-right-icons svg {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.319);
   border-radius: 50%;
   margin-left: 1rem;
-  color: rgb(157, 0, 0);
+  color: #43362b;
   stroke-width: 1px;
 }
 

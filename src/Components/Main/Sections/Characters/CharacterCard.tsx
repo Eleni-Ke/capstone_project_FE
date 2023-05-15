@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Card, Modal } from "react-bootstrap";
+import { Button, Card, Carousel, Modal } from "react-bootstrap";
 import { CiTrash } from "react-icons/ci";
 import { MdOutlinePhotoCamera } from "react-icons/md";
 import { TbSitemap } from "react-icons/tb";
@@ -70,7 +70,15 @@ const CharacterCard = (props: IProps) => {
         <Card.Body>
           <div className="card-image">
             {props.character.images.length > 0 ? (
-              <Card.Img src={props.character.images[0]} />
+              <Carousel interval={null}>
+                {props.character.images.map((image) => {
+                  return (
+                    <Carousel.Item>
+                      <img src={image} />
+                    </Carousel.Item>
+                  );
+                })}
+              </Carousel>
             ) : (
               <Card.Img src="https://static.vecteezy.com/system/resources/previews/009/734/564/original/default-avatar-profile-icon-of-social-media-user-vector.jpg" />
             )}

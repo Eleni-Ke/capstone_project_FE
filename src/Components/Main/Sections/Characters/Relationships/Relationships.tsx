@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactFlow, { Edge, Node, NodeDragHandler } from "react-flow-renderer";
 import { useAppSelector } from "../../../../../redux/hooks";
 import { ICharacter } from "../../../../../redux/interfaces/ICharacter";
+import { IRelationship } from "../../../../../redux/interfaces/IRelationship";
 import NavBar from "../../../Navbar/NavBar";
 
 const Relationships = () => {
@@ -30,8 +31,23 @@ const Relationships = () => {
     );
     setNodes(newNodes);
   };
+
+  const generateEdges = () => {
+    const newEdges = allCharacters.flatMap((character: ICharacter) => {
+      return character.relationships.map((relationship: IRelationship) => {
+        const edge: Edge = {
+          id: character._id + relationship.partner,
+          source: character._id,
+          target: relationship.partner,
+        };
+        return edge;
+      });
+    });
+    setEdges(newEdges);
+  };
   useEffect(() => {
     generateNodes();
+    generateEdges();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -52,12 +68,16 @@ const Relationships = () => {
     <div className="d-flex">
       <NavBar />
 
-      <div className="d-flex flex-column w-100">
+      <div className="d-flex flex-column w-100 position-absolute">
         <div className="banner-story banner">
           <h2>Relationships between characters:</h2>
         </div>
         <div className="relationshipFlow-main">
-          <ReactFlow nodes={nodes} onNodeDragStop={onNodeDragStop} />
+          <ReactFlow
+            nodes={nodes}
+            onNodeDragStop={onNodeDragStop}
+            edges={edges}
+          />
         </div>
       </div>
     </div>

@@ -31,7 +31,7 @@ const NavBar = () => {
     navigate("/");
   };
   return (
-    <Navbar className="navbar flex-column sticky-top">
+    <Navbar className="navbar flex-column fixed-top">
       <Navbar.Brand href="/home" className="mx-auto">
         <GiSpellBook />
       </Navbar.Brand>

@@ -12,7 +12,7 @@ const Places = () => {
   return (
     <div className="d-flex">
       <NavBar />
-      <div className="d-flex flex-column w-100">
+      <div className="d-flex flex-column w-100 position-absolute">
         <div className="banner-places banner">
           <h2>Places in story.</h2>
         </div>
