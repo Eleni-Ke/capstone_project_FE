@@ -297,3 +297,44 @@ p {
   width: 100%;
   height: 100%;
 }
+
+/* INTERACTIVE BACKGROUND */
+.interactive-background {
+  width: 100%;
+  height: 100%;
+  background-color: #f5deb3;
+  position: relative;
+}
+
+.letter-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.letter {
+  font-size: 2rem;
+  position: absolute;
+  animation: float 1s infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.interactive-background {
+  background-image: url("https://images.unsplash.com/photo-1578587319218-eb3bfae6f3f3");
+}

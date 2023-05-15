@@ -6,6 +6,7 @@ import { getAllCharacters } from "../../../../redux/actions/characterActions";
 import { getAllPlaces } from "../../../../redux/actions/placeActions";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import NavBar from "../../Navbar/NavBar";
+import InteractiveBackground from "./InteractiveBackground";
 
 const Home = () => {
   let currentUser = useAppSelector((state) => state.currentUser.currentUser);
@@ -34,6 +35,7 @@ const Home = () => {
     <div className="d-flex">
       <NavBar />
       <div className="home-main">
+        <InteractiveBackground />
         <h1>Welcome {currentUser?.username}</h1>
         <Link to="/characters">
           <img
