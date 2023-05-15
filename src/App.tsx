@@ -8,6 +8,7 @@ import Places from "./Components/Main/Sections/Places/Places";
 import Registration from "./Components/Login/Registration";
 import StoryLine from "./Components/Main/Sections/StoryLine/StoryLine";
 import Relationships from "./Components/Main/Sections/Characters/Relationships/Relationships";
+import Notes from "./Components/Main/Sections/Notes/Notes";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Route path="/characters" element={<Characters />} />
         <Route path="/characters/relationships" element={<Relationships />} />
         <Route path="/places" element={<Places />} />
-        <Route path="storyLine" element={<StoryLine />} />
+        <Route path="/storyLine" element={<StoryLine />} />
+        <Route path="/notes" element={<Notes />} />
       </Routes>
     </BrowserRouter>
   );

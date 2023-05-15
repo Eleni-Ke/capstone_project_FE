@@ -49,7 +49,7 @@ const NavBar = () => {
         <Nav.Link href="/storyLine">
           <GiSewingString />
         </Nav.Link>
-        <Nav.Link href="#">
+        <Nav.Link href="/notes">
           <GiNotebook />
         </Nav.Link>
         <Nav.Link href="/characters/relationships">
