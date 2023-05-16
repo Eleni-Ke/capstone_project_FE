@@ -17,10 +17,8 @@ export const addCharacter = (newCharacter: any, accessToken: string) => {
       });
       if (res.ok) {
         const data = await res.json();
-        dispatch({
-          type: POST_CHARACTER,
-          payload: data,
-        });
+
+        dispatch(getAllCharacters(accessToken));
         console.log("New Character: ", data);
       }
     } catch (error) {

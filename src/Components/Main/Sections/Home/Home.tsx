@@ -10,12 +10,8 @@ import InteractiveBackground from "./InteractiveBackground";
 
 const Home = () => {
   let currentUser = useAppSelector((state) => state.currentUser.currentUser);
-  let firstCharacterImage = useAppSelector(
-    (state) => state.characters.characters[0].images[0]
-  );
-  let firstPlaceImage = useAppSelector(
-    (state) => state.places.places[0].images[0]
-  );
+  let characters = useAppSelector((state) => state.characters);
+  let places = useAppSelector((state) => state.places);
 
   const dispatch = useAppDispatch();
   const accessToken = localStorage.getItem("accessToken");
@@ -41,12 +37,13 @@ const Home = () => {
     <div className="d-flex">
       <NavBar />
       <div className="home-main position-absolute">
+        <h2>Welcome {currentUser?.username}</h2>
         <InteractiveBackground />
-        <h1>Welcome {currentUser?.username}</h1>
         <Link to="/characters">
-          {firstCharacterImage ? (
+          {characters.characters.length > 0 &&
+          characters.characters[0].images.length > 0 ? (
             <img
-              src={firstCharacterImage}
+              src={characters.characters[0].images[0]}
               alt="character"
               className="character-image"
             />
@@ -59,8 +56,12 @@ const Home = () => {
           )}
         </Link>
         <Link to="/places">
-          {firstPlaceImage ? (
-            <img src={firstPlaceImage} className="place-image" />
+          {places.places.length > 0 && places.places[0].images.length > 0 ? (
+            <img
+              src={places.places[0].images[0]}
+              className="place-image"
+              alt="places"
+            />
           ) : (
             <img
               src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage.jpg"

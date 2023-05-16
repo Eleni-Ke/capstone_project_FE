@@ -14,7 +14,7 @@ const placesReducer = (state = initialState, action: any) => {
     case POST_PLACE:
       return {
         ...state,
-        places: action.payload,
+        places: [...state.places, action.payload],
       };
     case RESET_PLACES:
       return initialState;

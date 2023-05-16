@@ -59,12 +59,12 @@ const PlaceCard = (props: IProps) => {
         <Card.Title>{props.place.placeName}</Card.Title>
         <Card.Body>
           <div className="card-image">
-            {props.place.images.length > 0 ? (
+            {props.place.images && props.place.images.length > 0 ? (
               <Carousel interval={null}>
                 {props.place.images.map((image) => {
                   return (
                     <Carousel.Item>
-                      <img src={image} />
+                      <img src={image} alt="place" />
                     </Carousel.Item>
                   );
                 })}

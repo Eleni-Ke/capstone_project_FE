@@ -11,10 +11,6 @@ const PlaceAddModal = () => {
 
   const accessToken = localStorage.getItem("accessToken");
 
-  let currentUserInfo = useAppSelector(
-    (state) => state.currentUser.currentUser
-  );
-
   const dispatch = useAppDispatch();
 
   const handleClose = () => setShow(false);
@@ -26,7 +22,6 @@ const PlaceAddModal = () => {
         {
           placeName: placeName,
           description: placeDescription,
-          creator: currentUserInfo._id,
         },
         accessToken!
       )

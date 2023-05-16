@@ -52,7 +52,11 @@ const AddRelationshipModal = (props: IProps) => {
 
   return (
     <>
-      <button onClick={handleShow}>Add a relationship</button>
+      <div>
+        <button onClick={handleShow} className="addRelationshipButton">
+          Add a relationship
+        </button>
+      </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add a relationship here!</Modal.Title>

@@ -69,12 +69,12 @@ const CharacterCard = (props: IProps) => {
         <Card.Title>{props.character.name}</Card.Title>
         <Card.Body>
           <div className="card-image">
-            {props.character.images.length > 0 ? (
+            {props.character.images && props.character.images.length > 0 ? (
               <Carousel interval={null}>
                 {props.character.images.map((image) => {
                   return (
                     <Carousel.Item>
-                      <img src={image} />
+                      <img src={image} alt="character" />
                     </Carousel.Item>
                   );
                 })}
@@ -119,9 +119,6 @@ const CharacterCard = (props: IProps) => {
               </li>
             </ul>
           </div>
-          <a href="/characters/relationships">
-            <TbSitemap className="relationships-icon" />
-          </a>
         </Card.Body>
       </Card>
     </>

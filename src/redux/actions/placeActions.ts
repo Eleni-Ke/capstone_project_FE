@@ -15,10 +15,8 @@ export const addPlace = (newPlace: any, accessToken: string) => {
       });
       if (res.ok) {
         const data = await res.json();
-        dispatch({
-          type: POST_PLACE,
-          payload: data,
-        });
+
+        dispatch(getAllPlaces(accessToken));
         console.log("New Place: ", data);
       }
     } catch (error) {
