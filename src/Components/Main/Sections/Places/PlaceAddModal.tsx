@@ -41,7 +41,7 @@ const PlaceAddModal = () => {
           <BsArrowUpCircle />
         </a>
       </div>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="addNewElementModal">
         <Modal.Header closeButton>
           <Modal.Title>Add a place here!</Modal.Title>
         </Modal.Header>

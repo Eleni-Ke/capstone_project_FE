@@ -469,3 +469,9 @@ body {
   background-size: cover;
   margin-top: -2rem;
 }
+
+/* ADD ELEMENT MODAL */
+.addNewElementModal {
+  max-height: 90%;
+  overflow: auto;
+}

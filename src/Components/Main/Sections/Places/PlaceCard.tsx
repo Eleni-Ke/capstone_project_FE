@@ -80,8 +80,14 @@ const PlaceCard = (props: IProps) => {
           </div>
           <div>
             <ul>
-              <li>Description: {props.place.description}</li>
-              <li>ID: {props.place._id}</li>
+              <li>
+                <strong>Description: </strong>
+                {props.place.description}
+              </li>
+              <li>
+                <strong>ID: </strong>
+                {props.place._id}
+              </li>
             </ul>
           </div>
         </Card.Body>
