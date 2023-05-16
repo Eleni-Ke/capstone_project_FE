@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
 
 body {
   cursor: url("https://p7.hiclipart.com/preview/236/967/645/black-quill-pen.jpg"),
@@ -36,7 +37,7 @@ body {
   border: 1px solid black;
   border-radius: 50%;
   padding: 10px;
-  background-color: rgb(230, 227, 227);
+  background-color: #aed09e;
 }
 
 .logout-btn svg {
@@ -293,45 +294,151 @@ body {
 }
 
 /* LOGIN */
+/* Login.css */
 .LoginPage {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
+  background-image: url("https://media.istockphoto.com/id/647809752/photo/old-books-with-vintage-bindings-and-beautiful-gilded-leather-book-covers.jpg?s=612x612&w=0&k=20&c=qAhVsNoHq3Lt1rlNJJmbK24OkTfSq2xx-zI7cBMR1zo=");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Pinyon Script", cursive;
+  background-color: rgb(234, 224, 194);
 }
 
 .LoginForm {
-  flex: 1;
+  background-color: #ddae2f98;
+  padding: 15px;
+  padding-top: 5px;
+  border-radius: 8px;
+  max-width: 350px;
+  width: 90%;
+
+  margin-left: 3.5rem;
+  margin-top: -0.5rem;
+}
+
+@media screen and (max-width: 755px) {
+  .LoginPage {
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .LoginPage {
+    background-image: none;
+  }
+}
+
+.inputFields {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 2rem;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+
+.form-text {
+  width: 100%;
+}
+
+.inputFields h2 {
+  margin-bottom: -1rem;
+  font-size: 2rem;
+  font-family: "Pinyon Script", cursive;
+}
+
+.form-basic-email,
+.form-basic-password {
+  position: relative;
+}
+
+.form-basic-email::before,
+.form-basic-password::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #777;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-control {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #f9f9f9;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  height: 2.5rem;
+}
+
+.button-container .main-button {
+  background-color: #2a1b18;
+  color: #fff;
+  border: none;
+}
+
+.button-container .google-button {
+  background-color: #ffffff4e;
+  color: #2a1b18;
+  border: 2px solid #2a1b18;
+}
+
+.button-primary,
+.button-outline-primary {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-primary:hover,
+.button-outline-primary:hover {
+  background-color: #993399;
+  color: #fff;
 }
 
 .AppInfo {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  background-color: #f8f9fa;
+  text-align: center;
+  margin-top: -2rem;
+  max-width: 370px;
+  width: 90%;
+
+  margin-left: 4.5rem;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.AppInfo h1 {
+  font-size: 28px;
+  color: #c9a43c;
+  margin-bottom: 5px;
 }
 
-p {
+.AppInfo p {
+  color: #cab680;
+  line-height: 1.5;
   font-size: 1.2rem;
-  text-align: justify;
 }
 
 /* RELATIONSHIPS */
 
 .relationshipFlow-main {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 75vh;
 }
 
 #tsparticles {
