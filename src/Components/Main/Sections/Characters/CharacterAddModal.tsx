@@ -11,6 +11,11 @@ const CharacterAddModal = () => {
   const [show, setShow] = useState(false);
   let [name, setName] = useState("");
   let [description, setDescription] = useState("");
+  let [age, setAge] = useState("");
+  let [appearance, setAppearance] = useState("");
+  let [strengths, setStrengths] = useState("");
+  let [weaknesses, setWeaknesses] = useState("");
+  let [superPower, setSuperPower] = useState("");
 
   const accessToken = localStorage.getItem("accessToken");
 
@@ -25,12 +30,22 @@ const CharacterAddModal = () => {
         {
           name: name,
           description: description,
+          age: age,
+          appearance: appearance,
+          strengths: strengths,
+          weaknesses: weaknesses,
+          superPower: superPower,
         },
         accessToken!
       )
     );
     setName("");
     setDescription("");
+    setAge("");
+    setAppearance("");
+    setStrengths("");
+    setWeaknesses("");
+    setSuperPower("");
     dispatch(getAllCharacters(accessToken!));
     handleClose();
   };
@@ -77,9 +92,9 @@ const CharacterAddModal = () => {
               <Form.Label>Age</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter description"
-                //value={description}
-                //onChange={(e) => setDescription(e.target.value)}
+                placeholder="Enter age"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
                 required={false}
               />
             </Form.Group>
@@ -87,9 +102,9 @@ const CharacterAddModal = () => {
               <Form.Label>Appearance</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter description"
-                //value={description}
-                //onChange={(e) => setDescription(e.target.value)}
+                placeholder="Enter appearance"
+                value={appearance}
+                onChange={(e) => setAppearance(e.target.value)}
                 required={false}
               />
             </Form.Group>
@@ -97,9 +112,9 @@ const CharacterAddModal = () => {
               <Form.Label>Strengths</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter description"
-                // value={description}
-                // onChange={(e) => setDescription(e.target.value)}
+                placeholder="Enter strengths"
+                value={strengths}
+                onChange={(e) => setStrengths(e.target.value)}
                 required={false}
               />
             </Form.Group>
@@ -107,9 +122,9 @@ const CharacterAddModal = () => {
               <Form.Label>Weaknesses</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter description"
-                // value={description}
-                // onChange={(e) => setDescription(e.target.value)}
+                placeholder="Enter weaknesses"
+                value={weaknesses}
+                onChange={(e) => setWeaknesses(e.target.value)}
                 required={false}
               />
             </Form.Group>
@@ -117,9 +132,9 @@ const CharacterAddModal = () => {
               <Form.Label>Super power</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter description"
-                // value={description}
-                // onChange={(e) => setDescription(e.target.value)}
+                placeholder="Enter super power"
+                value={superPower}
+                onChange={(e) => setSuperPower(e.target.value)}
                 required={false}
               />
             </Form.Group>

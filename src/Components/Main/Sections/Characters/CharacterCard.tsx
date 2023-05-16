@@ -98,6 +98,37 @@ const CharacterCard = (props: IProps) => {
                 <strong>ID: </strong>
                 {props.character._id}
               </li>
+
+              {props.character.age && (
+                <li>
+                  <strong>Age: </strong>
+                  {props.character.age}
+                </li>
+              )}
+              {props.character.appearance && (
+                <li>
+                  <strong>Appearance: </strong>
+                  {props.character.appearance}
+                </li>
+              )}
+              {props.character.strengths && (
+                <li>
+                  <strong>Strengths: </strong>
+                  {props.character.strengths}
+                </li>
+              )}
+              {props.character.weaknesses && (
+                <li>
+                  <strong>Weaknesses: </strong>
+                  {props.character.weaknesses}
+                </li>
+              )}
+              {props.character.superPower && (
+                <li>
+                  <strong>Super Power: </strong>
+                  {props.character.superPower}
+                </li>
+              )}
               <li>
                 <strong>Relationships:</strong>
                 {props.character.relationships &&
