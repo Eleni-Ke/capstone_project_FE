@@ -4,6 +4,7 @@ import { persistStore, persistReducer } from "redux-persist";
 import currentUserReducer from "../reducers/currentUserReducer";
 import charactersReducer from "../reducers/charactersReducer";
 import placesReducer from "../reducers/placesReducer";
+import notesReducer from "../reducers/noteReducer";
 
 const persistConfig = {
   storage: Storage,
@@ -14,6 +15,7 @@ const combinedReducer = combineReducers({
   currentUser: currentUserReducer,
   characters: charactersReducer,
   places: placesReducer,
+  notes: notesReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, combinedReducer);

@@ -16,13 +16,11 @@ const Places = () => {
             <div className="banner-places banner">
               <h2>Places in story.</h2>
             </div>
-            {allPlaces && allPlaces.length > 0 ? (
+            {allPlaces &&
+              allPlaces.length > 0 &&
               allPlaces.map((place: any) => {
                 return <PlaceCard place={place} key={place._id} />;
-              })
-            ) : (
-              <p>Create your first Place here!</p>
-            )}
+              })}
           </div>
         </div>
       </div>

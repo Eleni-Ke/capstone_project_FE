@@ -133,7 +133,7 @@ const PlaceChangeModal = (props: IProps) => {
             Close
           </Button>
           <Button variant="primary" onClick={changePlace}>
-            Save character
+            Save place
           </Button>
         </Modal.Footer>
       </Modal>

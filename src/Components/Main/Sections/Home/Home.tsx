@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getMeInfo } from "../../../../redux/actions";
 import { getAllCharacters } from "../../../../redux/actions/characterActions";
+import { getAllNotes } from "../../../../redux/actions/notesActions";
 import { getAllPlaces } from "../../../../redux/actions/placeActions";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import NavBar from "../../Navbar/NavBar";
@@ -12,6 +13,7 @@ const Home = () => {
   let currentUser = useAppSelector((state) => state.currentUser.currentUser);
   let characters = useAppSelector((state) => state.characters);
   let places = useAppSelector((state) => state.places);
+  let notes = useAppSelector((state) => state.notes);
 
   const dispatch = useAppDispatch();
   const accessToken = localStorage.getItem("accessToken");
@@ -23,9 +25,10 @@ const Home = () => {
       dispatch(getMeInfo(tokenCookie!));
       dispatch(getAllCharacters(tokenCookie!));
       dispatch(getAllPlaces(tokenCookie!));
+      dispatch(getAllNotes(accessToken!));
     } else {
       dispatch(getAllCharacters(accessToken!));
-
+      dispatch(getAllNotes(accessToken!));
       dispatch(getAllPlaces(accessToken!));
     }
 
@@ -55,7 +58,7 @@ const Home = () => {
           )}
         </Link>
         <Link to="/places">
-          {places.places.length > 0 && places.places[0].images.length > 0 ? (
+          {places.places > 0 && places.places[0].images.length > 0 ? (
             <img
               src={places.places[0].images[0]}
               className="place-image"

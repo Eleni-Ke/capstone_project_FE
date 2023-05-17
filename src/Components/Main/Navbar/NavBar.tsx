@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { RESET_CHARACTERS } from "../../../redux/actions/characterActions";
 import { RESET_PLACES } from "../../../redux/actions/placeActions";
+import { RESET_NOTES } from "../../../redux/actions/notesActions";
 
 const NavBar = () => {
   const dispatch = useAppDispatch();
@@ -25,6 +26,9 @@ const NavBar = () => {
     });
     dispatch({
       type: RESET_CURRENT_USER,
+    });
+    dispatch({
+      type: RESET_NOTES,
     });
 
     Cookies.remove("accessToken");

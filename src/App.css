@@ -50,10 +50,6 @@ body {
   font-family: "Libre Baskerville", serif;
 }
 
-/* .character-link svg {
-  background-color: #777;
-} */
-
 /* HOME */
 .home-main {
   width: 100%;
@@ -114,10 +110,7 @@ body {
 .banner h2 {
   font-size: 3rem;
   text-decoration: underline;
-}
-
-.banner-places h2 {
-  background-color: rgba(255, 255, 255, 0.49);
+  background-color: rgba(255, 255, 255, 0.887);
   width: fit-content;
   padding: 5px;
   margin-inline: auto;
@@ -134,13 +127,18 @@ body {
 /* MAIN PLACES */
 .main-places {
   background-image: url(https://e0.pxfuel.com/wallpapers/411/263/desktop-wallpaper-old-map-old-map-background-on-bat-steampunk-map.jpg);
-  /* background-size: cover;
-  min-height: 100vh; */
+  background-size: cover;
+  min-height: 80vh;
 }
 
 .main-places .single-card {
   background-image: url(https://i.pinimg.com/originals/2a/72/4b/2a724b9136e2a140fea30d7aaa73a4cd.jpg);
 }
+
+/* MAIN NOTES */
+/* .main-notes {
+  background-image: url(https://media.freestocktextures.com/cache/59/96/599621140678945f31cea52ff69aa415.jpg);
+} */
 
 /* MAIN CHARACTERS */
 .main-characters {
@@ -191,6 +189,8 @@ body {
   background-image: url(../public/assets/gray-wooden-background-vector.png);
   background-size: contain;
   padding-top: 5rem;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 /* SINGLE CARDS */
