@@ -34,7 +34,7 @@ const CharacterChangeModal = (props: IProps) => {
   const changeCharacter = () => {
     dispatch(
       putCharacter(
-        currentCharacter._id,
+        currentCharacter._id!,
         {
           name: name,
           description: description,

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button, Card, Carousel, Modal } from "react-bootstrap";
 import { CiTrash } from "react-icons/ci";
 import { MdOutlinePhotoCamera } from "react-icons/md";
-import { TbSitemap } from "react-icons/tb";
 import {
   addCharacterImage,
   deleteCharacter,
@@ -30,7 +29,7 @@ const CharacterCard = (props: IProps) => {
   const addImage = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(
       addCharacterImage(
-        props.character._id,
+        props.character._id!,
         event.target.files?.[0],
         accessToken!
       )
@@ -38,7 +37,7 @@ const CharacterCard = (props: IProps) => {
   };
 
   const deleteCurrentCharacter = () => {
-    dispatch(deleteCharacter(props.character._id, accessToken!));
+    dispatch(deleteCharacter(props.character._id!, accessToken!));
     dispatch(getAllCharacters(accessToken!));
     handleClose();
   };

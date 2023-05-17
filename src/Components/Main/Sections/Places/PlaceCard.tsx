@@ -25,12 +25,12 @@ const PlaceCard = (props: IProps) => {
 
   const addImage = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(
-      addPlaceImage(props.place._id, event.target.files?.[0], accessToken!)
+      addPlaceImage(props.place._id!, event.target.files?.[0], accessToken!)
     );
   };
 
   const deleteCurrentPlace = () => {
-    dispatch(deletePlace(props.place._id, accessToken!));
+    dispatch(deletePlace(props.place._id!, accessToken!));
     dispatch(getAllPlaces(accessToken!));
     handleClose();
   };

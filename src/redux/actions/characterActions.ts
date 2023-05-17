@@ -1,10 +1,11 @@
+import { ICharacter } from "../interfaces/ICharacter";
 import { IRelationship } from "../interfaces/IRelationship";
 
 export const GET_CHARACTERS = "GET_CHARACTERS";
 export const POST_CHARACTER = "POST_CHARACTER";
 export const RESET_CHARACTERS = "RESET_CHARACTERS";
 
-export const addCharacter = (newCharacter: any, accessToken: string) => {
+export const addCharacter = (newCharacter: ICharacter, accessToken: string) => {
   return async (dispatch: any) => {
     try {
       const res = await fetch(`${process.env.REACT_APP_BE_URL}/characters`, {
@@ -73,7 +74,7 @@ export const getOneCharacter = (characterId: string, accessToken: string) => {
 
 export const putCharacter = (
   characterId: string,
-  characterChange: any,
+  characterChange: ICharacter,
   accessToken: string
 ) => {
   return async (dispatch: any) => {

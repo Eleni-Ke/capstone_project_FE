@@ -29,9 +29,9 @@ const PlaceChangeModal = (props: IProps) => {
   const changePlace = () => {
     dispatch(
       putPlace(
-        currentPlace._id,
+        currentPlace._id!,
         {
-          name: name,
+          placeName: name,
           description: description,
           owner: owner,
           smells: smells,

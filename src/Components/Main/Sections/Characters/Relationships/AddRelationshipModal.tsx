@@ -24,7 +24,7 @@ const AddRelationshipModal = (props: IProps) => {
     (e: any) => e._id !== props.character._id
   );
 
-  let onlyIdFromPartners = props.character.relationships.map(
+  let onlyIdFromPartners = props.character.relationships!.map(
     (obj) => obj.partner
   );
 
@@ -35,7 +35,7 @@ const AddRelationshipModal = (props: IProps) => {
   const addNewRelationship = () => {
     dispatch(
       addRelationship(
-        props.character._id,
+        props.character._id!,
         [
           {
             partner: partner,

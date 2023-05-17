@@ -1,8 +1,10 @@
+import { IPlace } from "../interfaces/IPlace";
+
 export const GET_PLACES = "GET_PLACES";
 export const POST_PLACE = "POST_PLACE";
 export const RESET_PLACES = "RESET_PLACES";
 
-export const addPlace = (newPlace: any, accessToken: string) => {
+export const addPlace = (newPlace: IPlace, accessToken: string) => {
   return async (dispatch: any) => {
     try {
       const res = await fetch(`${process.env.REACT_APP_BE_URL}/places`, {
@@ -71,7 +73,7 @@ export const getOnePlace = (placeId: string, accessToken: string) => {
 
 export const putPlace = (
   placeId: string,
-  placeChange: any,
+  placeChange: IPlace,
   accessToken: string
 ) => {
   return async (dispatch: any) => {

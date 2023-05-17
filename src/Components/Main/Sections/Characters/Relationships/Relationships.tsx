@@ -15,7 +15,7 @@ const Relationships = () => {
       (character: ICharacter, index: number) => {
         const img = character.images?.[0] || "";
         const node: Node = {
-          id: character._id,
+          id: character._id!,
           data: {
             label: character.name,
             img,
@@ -34,10 +34,10 @@ const Relationships = () => {
 
   const generateEdges = () => {
     const newEdges = allCharacters.flatMap((character: ICharacter) => {
-      return character.relationships.map((relationship: IRelationship) => {
+      return character.relationships!.map((relationship: IRelationship) => {
         const edge: Edge = {
           id: character._id + relationship.partner,
-          source: character._id,
+          source: character._id!,
           target: relationship.partner,
         };
         return edge;

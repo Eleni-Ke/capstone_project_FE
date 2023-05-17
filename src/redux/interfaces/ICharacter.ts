@@ -1,14 +1,14 @@
 import { IRelationship } from "./IRelationship";
 
 export interface ICharacter {
-  _id: string;
+  _id?: string;
   name: string;
   description: string;
-  age: string;
-  appearance: string;
-  strengths: string;
-  weaknesses: string;
-  superPower: string;
-  images: string[];
-  relationships: IRelationship[];
+  age?: string;
+  appearance?: string;
+  strengths?: string;
+  weaknesses?: string;
+  superPower?: string;
+  images?: string[];
+  relationships?: IRelationship[];
 }

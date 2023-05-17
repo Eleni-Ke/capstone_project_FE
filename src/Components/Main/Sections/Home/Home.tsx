@@ -22,7 +22,6 @@ const Home = () => {
       localStorage.setItem("accessToken", tokenCookie);
       dispatch(getMeInfo(tokenCookie!));
       dispatch(getAllCharacters(tokenCookie!));
-
       dispatch(getAllPlaces(tokenCookie!));
     } else {
       dispatch(getAllCharacters(accessToken!));
