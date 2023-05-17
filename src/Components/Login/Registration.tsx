@@ -37,73 +37,86 @@ const Registration = () => {
     }
   };
   return (
-    <div className="LoginPage">
-      <div className="LoginForm">
-        <h2>Login</h2>
-        <Form
-          className="form-text"
-          onSubmit={(e) => {
-            e.preventDefault();
-            userLogin();
-          }}
-        >
-          <Form.Group controlId="formBasicUsername">
-            <Form.Label>Username</Form.Label>
-            <Form.Control
-              type="username"
-              placeholder="Set your username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required={true}
-            />
-          </Form.Group>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              value={userEmail}
-              onChange={(e) => setUserEmail(e.target.value)}
-              required={true}
-            />
-          </Form.Group>
+    <div className="login-background registration-page">
+      <div className="LoginPage">
+        <div className="AppInfo">
+          <h1>Scriptorium</h1>
+        </div>
+        <div className="LoginForm">
+          <div className="inputFields">
+            <h2>Registration</h2>
+            <Form
+              className="form-text"
+              onSubmit={(e) => {
+                e.preventDefault();
+                userLogin();
+              }}
+            >
+              <Form.Group controlId="formBasicUsername">
+                <Form.Label>Username</Form.Label>
+                <Form.Control
+                  type="username"
+                  placeholder="Set your username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              value={userPW}
-              onChange={(e) => setUserPW(e.target.value)}
-              required={true}
-            />
-          </Form.Group>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  value={userPW}
+                  onChange={(e) => setUserPW(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
 
-          <Button variant="primary" onClick={userLogin}>
-            Register now
-          </Button>
+              <div className="button-container">
+                <Button
+                  className="main-button"
+                  variant="primary"
+                  onClick={userLogin}
+                >
+                  Register
+                </Button>
 
-          <Button
-            variant="outline-primary"
-            type="submit"
-            href={`${process.env.REACT_APP_BE_URL}/users/googleLogin`}
-          >
-            Register with Google
-          </Button>
-          <Button variant="primary" href="/">
-            Already a member? Login here!
-          </Button>
-        </Form>
+                <Button
+                  className="google-button"
+                  variant="outline-primary"
+                  type="submit"
+                  href={`${process.env.REACT_APP_BE_URL}/users/googleLogin`}
+                >
+                  Register with Google
+                </Button>
+                <Button className="main-button" variant="primary" href="/">
+                  Login here!
+                </Button>
+              </div>
+            </Form>
+          </div>
+        </div>
       </div>
-
-      <div className="AppInfo">
-        <h1>Book Writing App</h1>
+      <div className="info-text">
         <p>
-          Welcome to the Book Writing App! Our app provides a user-friendly
-          interface that makes it easy for you to write your book. With our
-          intuitive design, you can focus on your writing without worrying about
-          formatting, layout, or other distractions. Try it out today and see
-          how easy it is to write your book!
+          Enter Scriptorium, the Book Writing App where your literary dreams
+          take flight.
+          <br /> <br />
+          Organize your ideas, embark on new adventures, and unleash your
+          creativity upon the page. <br /> <br />
+          Welcome to a world of boundless inspiration.
         </p>
       </div>
     </div>

@@ -38,7 +38,7 @@ const Login = () => {
     <div className="login-background">
       <div className="LoginPage">
         <div className="AppInfo">
-          <h1>Book Writing App</h1>
+          <h1>Scriptorium</h1>
         </div>
         <div className="LoginForm">
           <div className="inputFields">
@@ -103,7 +103,8 @@ const Login = () => {
       </div>
       <div className="info-text">
         <p>
-          Enter the Book Writing App, where your literary dreams take flight.{" "}
+          Enter Scriptorium, the Book Writing App where your literary dreams
+          take flight.
           <br /> <br />
           Organize your ideas, embark on new adventures, and unleash your
           creativity upon the page. <br /> <br />

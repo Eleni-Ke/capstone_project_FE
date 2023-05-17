@@ -322,7 +322,7 @@ body {
 
 /* LOGIN */
 .login-background {
-  background-image: url(https://thumbs.dreamstime.com/b/gold-glitter-background-sparkling-texture-golden-shimmering-light-stars-sequins-sparks-glittering-glow-foil-166851774.jpg);
+  background-image: url(../public/assets/gold-glitter-background.jpeg);
   padding-top: 5%;
   padding-bottom: 5%;
 
@@ -332,13 +332,11 @@ body {
 .LoginPage {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   height: 85vh;
   background-image: url(../public/assets/old-book.png);
   background-size: contain;
   background-repeat: no-repeat;
-  /* background-position: center; */
   font-family: "Pinyon Script", cursive;
   margin-left: 3%;
   padding-left: 4%;
@@ -352,12 +350,12 @@ body {
   max-width: 350px;
   width: 90%;
 
-  margin-left: 6%;
+  margin-left: 6.3%;
   margin-top: 1%;
 }
 
 @media screen and (max-width: 755px) {
-  .LoginPage {
+  .login-background {
     background-size: cover;
   }
 }
@@ -376,6 +374,10 @@ body {
   font-size: 1.5rem;
 }
 
+.registration-page .LoginForm {
+  margin-top: -2.3rem;
+}
+
 .form-text {
   width: 100%;
 }
@@ -385,25 +387,11 @@ body {
   font-size: 2rem;
 }
 
-.form-basic-email,
-.form-basic-password {
-  position: relative;
-}
-
-.form-basic-email::before,
-.form-basic-password::before {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background-color: #777;
-}
-
 .form-label {
   font-weight: bold;
   color: #333;
+  text-decoration: underline;
+  margin-bottom: 0rem;
 }
 
 .form-control {
@@ -417,7 +405,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px;
-  height: 2.5rem;
+  min-height: 2.5rem;
 }
 
 .button-container .main-button {
@@ -430,15 +418,6 @@ body {
   background-color: #ffffff4e;
   color: #2a1b18;
   border: 2px solid #2a1b18;
-}
-
-.button-primary,
-.button-outline-primary {
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .AppInfo {
@@ -455,16 +434,21 @@ body {
   color: #c9a43c;
   margin-bottom: 15%;
   text-shadow: 3px 2px 3px rgba(247, 247, 238, 0.2);
+  border: 0.5px solid #c9a43c;
+  padding: 5px 10px;
+  width: fit-content;
+  margin-inline: auto;
 }
 
 .info-text {
-  width: 30%;
+  width: 38%;
   position: absolute;
   top: 15%;
   left: 55%;
   font-size: 2.3rem;
   font-weight: bold;
   text-shadow: 0px 0px 3px #ffffff;
+  text-align: center;
 }
 
 /* .AppInfo p {
