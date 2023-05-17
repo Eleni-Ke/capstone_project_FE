@@ -78,15 +78,11 @@ const PlaceCard = (props: IProps) => {
               <input className="input" type="file" onChange={addImage} />
             </label>
           </div>
-          <div>
+          <div className="card-text">
             <ul>
               <li>
                 <strong>Description: </strong>
                 {props.place.description}
-              </li>
-              <li>
-                <strong>ID: </strong>
-                {props.place._id}
               </li>
             </ul>
           </div>

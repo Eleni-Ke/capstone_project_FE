@@ -40,20 +40,33 @@ const NavBar = () => {
         id="basic-navbar-nav"
         className="justify-content-end navbar-icons flex-column"
       >
-        <Nav.Link href="/characters">
+        <Nav.Link href="/characters" className="character-link">
           <IoPeopleCircleOutline />
+          <br />
+          Characters
         </Nav.Link>
-        <Nav.Link href="/places">
+        <Nav.Link href="/places" className="places-link">
           <GrMapLocation />
+          <br />
+          Places
         </Nav.Link>
-        <Nav.Link href="/storyLine">
+        <Nav.Link href="/storyLine" className="story-link">
           <GiSewingString />
+          <br />
+          Story
         </Nav.Link>
-        <Nav.Link href="/notes">
+        <Nav.Link href="/notes" className="notes-link">
           <GiNotebook />
+          <br />
+          Notes
         </Nav.Link>
-        <Nav.Link href="/characters/relationships">
+        <Nav.Link
+          href="/characters/relationships"
+          className="relationship-link"
+        >
           <TbCirclesRelation />
+          <br />
+          Relationships
         </Nav.Link>
         <Nav.Link onClick={logout} className="logout-btn">
           <RiLogoutCircleLine />

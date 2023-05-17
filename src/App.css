@@ -19,7 +19,7 @@ body {
   align-items: center;
   color: black;
   box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.75);
-  margin-left: -7rem;
+  /* margin-left: -7rem; */
   transition: margin-left linear 0.2s;
   position: fixed;
   top: 0;
@@ -33,7 +33,7 @@ body {
   font-size: 4rem;
   margin-inline: center;
   color: black;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   border: 1px solid black;
   border-radius: 50%;
   padding: 10px;
@@ -44,6 +44,16 @@ body {
   background-color: rgb(157, 0, 0);
 }
 
+.nav-link {
+  text-align: center;
+  color: black;
+  font-family: "Libre Baskerville", serif;
+}
+
+/* .character-link svg {
+  background-color: #777;
+} */
+
 /* HOME */
 .home-main {
   width: 100%;
@@ -53,7 +63,7 @@ body {
 .home-main h2 {
   width: fit-content;
 
-  margin-left: 37%;
+  margin-left: 40%;
   padding: 1rem 1.5rem;
   background-color: aliceblue;
   border: 1.5px solid rgb(128, 188, 241);
@@ -97,22 +107,21 @@ body {
 /* BANNER */
 
 .banner {
-  /* height: 8rem;
-  width: 100%;
-  background-color: #7e6752;
-  color: #f4eec0;
-  border-bottom: 1px solid #3e3226;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  box-shadow: -1px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  z-index: 2; */
-
   text-align: center;
+  padding-top: 3rem;
 }
 
 .banner h2 {
-  padding-top: 3rem;
   font-size: 3rem;
   text-decoration: underline;
+}
+
+.banner-places h2 {
+  background-color: rgba(255, 255, 255, 0.49);
+  width: fit-content;
+  padding: 5px;
+  margin-inline: auto;
+  border-radius: 10px;
 }
 
 /* STORY LINE */
@@ -124,7 +133,7 @@ body {
 
 /* MAIN PLACES */
 .main-places {
-  background-image: url(https://as1.ftcdn.net/v2/jpg/00/91/50/18/1000_F_91501890_eRy2gFczgLI2mAkpbwm0vvpwIsbn6x1a.jpg);
+  background-image: url(https://e0.pxfuel.com/wallpapers/411/263/desktop-wallpaper-old-map-old-map-background-on-bat-steampunk-map.jpg);
   /* background-size: cover;
   min-height: 100vh; */
 }
@@ -312,19 +321,27 @@ body {
 }
 
 /* LOGIN */
-/* Login.css */
+.login-background {
+  background-image: url(https://thumbs.dreamstime.com/b/gold-glitter-background-sparkling-texture-golden-shimmering-light-stars-sequins-sparks-glittering-glow-foil-166851774.jpg);
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+  font-family: "Pinyon Script", cursive;
+}
+
 .LoginPage {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
-  height: 100vh;
-  background-image: url("https://media.istockphoto.com/id/647809752/photo/old-books-with-vintage-bindings-and-beautiful-gilded-leather-book-covers.jpg?s=612x612&w=0&k=20&c=qAhVsNoHq3Lt1rlNJJmbK24OkTfSq2xx-zI7cBMR1zo=");
+  height: 85vh;
+  background-image: url(../public/assets/old-book.png);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  /* background-position: center; */
   font-family: "Pinyon Script", cursive;
-  background-color: rgb(234, 224, 194);
+  margin-left: 3%;
+  padding-left: 4%;
 }
 
 .LoginForm {
@@ -335,8 +352,8 @@ body {
   max-width: 350px;
   width: 90%;
 
-  margin-left: 3.5rem;
-  margin-top: -0.5rem;
+  margin-left: 6%;
+  margin-top: 1%;
 }
 
 @media screen and (max-width: 755px) {
@@ -366,7 +383,6 @@ body {
 .inputFields h2 {
   margin-bottom: -1rem;
   font-size: 2rem;
-  font-family: "Pinyon Script", cursive;
 }
 
 .form-basic-email,
@@ -425,15 +441,9 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.button-primary:hover,
-.button-outline-primary:hover {
-  background-color: #993399;
-  color: #fff;
-}
-
 .AppInfo {
   text-align: center;
-  margin-top: -2rem;
+  margin-top: 0;
   max-width: 370px;
   width: 90%;
 
@@ -441,16 +451,27 @@ body {
 }
 
 .AppInfo h1 {
-  font-size: 28px;
+  font-size: 3rem;
   color: #c9a43c;
-  margin-bottom: 5px;
+  margin-bottom: 15%;
+  text-shadow: 3px 2px 3px rgba(247, 247, 238, 0.2);
 }
 
-.AppInfo p {
+.info-text {
+  width: 30%;
+  position: absolute;
+  top: 15%;
+  left: 55%;
+  font-size: 2.3rem;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px #ffffff;
+}
+
+/* .AppInfo p {
   color: #cab680;
   line-height: 1.5;
   font-size: 1.2rem;
-}
+} */
 
 /* RELATIONSHIPS */
 
