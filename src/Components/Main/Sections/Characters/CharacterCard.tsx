@@ -94,11 +94,6 @@ const CharacterCard = (props: IProps) => {
                 <strong>Description: </strong>
                 {props.character.description}
               </li>
-              <li>
-                <strong>ID: </strong>
-                {props.character._id}
-              </li>
-
               {props.character.age && (
                 <li>
                   <strong>Age: </strong>

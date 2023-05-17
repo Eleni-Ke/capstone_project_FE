@@ -11,17 +11,19 @@ const Places = () => {
     <div className="d-flex">
       <NavBar />
       <div className="d-flex flex-column w-100 position-absolute">
-        <div className="banner-places banner">
-          <h2>Places in story.</h2>
-        </div>
-        <div className="main-section main-places">
-          {allPlaces && allPlaces.length > 0 ? (
-            allPlaces.map((place: any) => {
-              return <PlaceCard place={place} key={place._id} />;
-            })
-          ) : (
-            <p>Create your first Place here!</p>
-          )}
+        <div className="background-table">
+          <div className="main-section main-places">
+            <div className="banner-places banner">
+              <h2>Places in story.</h2>
+            </div>
+            {allPlaces && allPlaces.length > 0 ? (
+              allPlaces.map((place: any) => {
+                return <PlaceCard place={place} key={place._id} />;
+              })
+            ) : (
+              <p>Create your first Place here!</p>
+            )}
+          </div>
         </div>
       </div>
       <PlaceAddModal />

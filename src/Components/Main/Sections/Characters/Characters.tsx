@@ -13,19 +13,19 @@ const Characters = () => {
     <div className="d-flex">
       <NavBar />
       <div className="d-flex flex-column w-100 position-absolute">
-        <div className="banner-characters banner">
-          <h2>The Characters</h2>
-        </div>
-        <div className="main-section main-characters">
-          {allCharacters && allCharacters.length > 0 ? (
-            allCharacters.map((character: any) => {
-              return (
-                <CharacterCard character={character} key={character._id} />
-              );
-            })
-          ) : (
-            <p> Create your first Character here!</p>
-          )}
+        <div className="background-table">
+          <div className="main-section main-characters">
+            <div className="banner-characters banner">
+              <h2 className="section-title">The Characters</h2>
+            </div>
+            {allCharacters &&
+              allCharacters.length > 0 &&
+              allCharacters.map((character: any) => {
+                return (
+                  <CharacterCard character={character} key={character._id} />
+                );
+              })}
+          </div>
         </div>
       </div>
       <CharacterAddModal />

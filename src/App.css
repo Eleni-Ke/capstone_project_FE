@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
 
 body {
-  /* cursor: url("https://p7.hiclipart.com/preview/236/967/645/black-quill-pen.jpg"),
-    auto; */
+  cursor: url(https://p7.hiclipart.com/preview/236/967/645/black-quill-pen.jpg),
+    auto;
   font-family: "Libre Baskerville", serif;
 }
 
@@ -94,43 +94,25 @@ body {
   transition: all linear 0.15s;
 }
 
-/* .scene-image {
-  width: 16rem;
-  height: 16rem;
-  object-fit: cover;
-  border-radius: 50%;
-  position: absolute;
-  top: 20%;
-  left: 35%;
-}
-
-.quote {
-  padding: 2rem;
-  width: 16rem;
-  border-radius: 50px;
-  background-color: antiquewhite;
-  position: absolute;
-  top: 20%;
-  left: 75%;
-} */
-
 /* BANNER */
 
 .banner {
-  height: 8rem;
+  /* height: 8rem;
   width: 100%;
   background-color: #7e6752;
   color: #f4eec0;
   border-bottom: 1px solid #3e3226;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   box-shadow: -1px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  z-index: 2;
+  z-index: 2; */
+
+  text-align: center;
 }
 
 .banner h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-top: 2.5rem;
+  padding-top: 3rem;
+  font-size: 3rem;
+  text-decoration: underline;
 }
 
 /* STORY LINE */
@@ -143,31 +125,17 @@ body {
 /* MAIN PLACES */
 .main-places {
   background-image: url(https://as1.ftcdn.net/v2/jpg/00/91/50/18/1000_F_91501890_eRy2gFczgLI2mAkpbwm0vvpwIsbn6x1a.jpg);
-  background-size: cover;
-  min-height: 100vh;
+  /* background-size: cover;
+  min-height: 100vh; */
 }
 
 .main-places .single-card {
-  background-color: #f4eec0b1;
-  border-bottom: 3px solid #86847f;
-  border-left: 3px solid #86847f;
-  border-top: 1px solid #ffffffb1;
-  border-right: 1px solid #ffffffb1;
+  background-image: url(https://i.pinimg.com/originals/2a/72/4b/2a724b9136e2a140fea30d7aaa73a4cd.jpg);
 }
 
 /* MAIN CHARACTERS */
 .main-characters {
-  background-image: url(https://images.unsplash.com/photo-1506968430777-bf7784a87f23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29vZCUyMHRhYmxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80);
-  background-size: contain;
-  min-height: 88%;
-}
-
-.main-characters .single-card {
-  background-color: #f4eec0b1;
-  border-bottom: 3px solid #86847f;
-  border-left: 3px solid #86847f;
-  border-top: 1px solid #ffffffb1;
-  border-right: 1px solid #ffffffb1;
+  background-image: url(https://media.freestocktextures.com/cache/59/96/599621140678945f31cea52ff69aa415.jpg);
 }
 
 .relationships-icon {
@@ -186,20 +154,42 @@ body {
   background-color: antiquewhite;
 }
 
-/* SINGLE CARDS */
-.single-card {
+/* COMMON CSS MAIN */
+.main-section {
+  width: 80%;
+  background-size: contain;
+  margin-inline: auto;
+  border-top-right-radius: 10px;
+  background-repeat: repeat-y;
+  font-family: "Pinyon Script", cursive;
+}
+
+.main-section .single-card {
+  background-color: transparent;
+  background-image: url(../public/assets/old\ paper.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none !important;
   width: 85%;
   margin-inline: auto;
   margin-top: 5rem;
-  border-radius: 10px !important;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  padding-top: 2rem;
+  padding-right: 3rem;
+  max-height: fit-content;
 }
 
+.background-table {
+  background-image: url(../public/assets/gray-wooden-background-vector.png);
+  background-size: contain;
+  padding-top: 5rem;
+}
+
+/* SINGLE CARDS */
 .single-card .card-title {
   text-align: center;
-  font-size: 2.2rem;
-  margin-top: -3.5rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
+  margin-top: -2rem;
 }
 
 .single-card .card-body {
@@ -227,14 +217,13 @@ body {
   text-align: center;
   padding: 20px;
   background-color: antiquewhite;
-  margin-right: 2rem;
-  box-shadow: -2px 3px 6px 3px rgba(0, 0, 0, 0.42);
+  box-shadow: -2px 3px 6px 3px rgba(0, 0, 0, 0.593);
 
   transform: rotate(-5deg) translateY(-20px);
   transition: all 0.2s linear;
   object-fit: contain;
   overflow: hidden;
-  margin: 15px;
+  margin-left: -2rem;
 }
 
 .single-card img {
@@ -263,16 +252,17 @@ body {
 
 .single-card .card-text {
   margin-top: 0;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   height: 25rem;
   overflow: auto;
+  margin-left: 3rem;
 }
 
 .edit-delete-button {
   font-size: 2rem;
   text-align: end;
-  margin-right: 1rem;
-  margin-top: 1rem;
+  margin-right: 3rem;
+  margin-top: 2rem;
   z-index: 2;
 }
 
@@ -281,12 +271,19 @@ body {
   background-color: rgba(255, 255, 255, 0);
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1000px) {
   .single-card .card-body {
     flex-direction: column;
+
+    margin-inline: auto;
   }
   .single-card .card-img {
     width: 85%;
+    margin-inline: auto;
+  }
+  .single-card .card-text {
+    margin-top: 5rem;
+    font-size: 1.5rem;
     margin-inline: auto;
   }
 }
@@ -295,7 +292,7 @@ body {
 .bottom-right-icons {
   position: fixed;
   bottom: 1rem;
-  right: 1rem;
+  right: 10%;
   display: flex;
   z-index: 2;
   font-size: 3rem;
