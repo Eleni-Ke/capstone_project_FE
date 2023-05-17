@@ -1,7 +1,7 @@
 import NavBar from "../../Navbar/NavBar";
 import PlaceCard from "./PlaceCard";
 import PlaceAddModal from "./PlaceAddModal";
-import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
+import { useAppSelector } from "../../../../redux/hooks";
 
 const Places = () => {
   ("accessToken");

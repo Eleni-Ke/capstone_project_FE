@@ -18,6 +18,11 @@ const PlaceChangeModal = (props: IProps) => {
 
   let [name, setName] = useState(currentPlace.placeName);
   let [description, setDescription] = useState(currentPlace.description);
+  let [owner, setOwner] = useState(currentPlace.owner);
+  let [smells, setSmells] = useState(currentPlace.smells);
+  let [type, setType] = useState(currentPlace.type);
+  let [lighting, setLighting] = useState(currentPlace.lighting);
+  let [events, setEvents] = useState(currentPlace.events);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -28,6 +33,11 @@ const PlaceChangeModal = (props: IProps) => {
         {
           name: name,
           description: description,
+          owner: owner,
+          smells: smells,
+          type: type,
+          lighting: lighting,
+          events: events,
         },
         accessToken!
       )
@@ -64,6 +74,56 @@ const PlaceChangeModal = (props: IProps) => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 required={true}
+              />
+            </Form.Group>
+            <Form.Group controlId="formPlaceOwner">
+              <Form.Label>Owner</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter owner"
+                value={owner}
+                onChange={(e) => setOwner(e.target.value)}
+                required={false}
+              />
+            </Form.Group>
+            <Form.Group controlId="formPlaceSmells">
+              <Form.Label>Smells </Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter smells"
+                value={smells}
+                onChange={(e) => setSmells(e.target.value)}
+                required={false}
+              />
+            </Form.Group>
+            <Form.Group controlId="formPlaceType">
+              <Form.Label>Type</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter type"
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+                required={false}
+              />
+            </Form.Group>
+            <Form.Group controlId="formPlaceLighting">
+              <Form.Label>Lighting</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter lighting"
+                value={lighting}
+                onChange={(e) => setLighting(e.target.value)}
+                required={false}
+              />
+            </Form.Group>
+            <Form.Group controlId="formPlaceEvents">
+              <Form.Label>Events</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter events"
+                value={events}
+                onChange={(e) => setEvents(e.target.value)}
+                required={false}
               />
             </Form.Group>
           </Form>

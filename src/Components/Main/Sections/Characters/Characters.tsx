@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { getAllCharacters } from "../../../../redux/actions/characterActions";
-import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
+import { useAppSelector } from "../../../../redux/hooks";
 import NavBar from "../../Navbar/NavBar";
 import CharacterAddModal from "./CharacterAddModal";
 import CharacterCard from "./CharacterCard";

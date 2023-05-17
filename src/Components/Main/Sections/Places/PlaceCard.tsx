@@ -84,6 +84,36 @@ const PlaceCard = (props: IProps) => {
                 <strong>Description: </strong>
                 {props.place.description}
               </li>
+              {props.place.owner && (
+                <li>
+                  <strong>Owner: </strong>
+                  {props.place.owner}
+                </li>
+              )}
+              {props.place.smells && (
+                <li>
+                  <strong>Smells: </strong>
+                  {props.place.smells}
+                </li>
+              )}
+              {props.place.type && (
+                <li>
+                  <strong>Type: </strong>
+                  {props.place.type}
+                </li>
+              )}
+              {props.place.lighting && (
+                <li>
+                  <strong>Lighting: </strong>
+                  {props.place.lighting}
+                </li>
+              )}
+              {props.place.events && (
+                <li>
+                  <strong>Events: </strong>
+                  {props.place.events}
+                </li>
+              )}
             </ul>
           </div>
         </Card.Body>
