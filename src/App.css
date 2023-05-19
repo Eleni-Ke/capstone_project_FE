@@ -21,7 +21,7 @@ body {
   align-items: center;
   color: black;
   box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.75);
-  /* margin-left: -7rem; */
+  margin-left: -7rem;
   transition: margin-left linear 0.2s;
   position: fixed;
   top: 0;
