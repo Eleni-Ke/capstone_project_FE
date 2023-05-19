@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Button, Card, Carousel, Modal } from "react-bootstrap";
 import { CiTrash } from "react-icons/ci";
 import { MdOutlinePhotoCamera } from "react-icons/md";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 import {
   addCharacterImage,
   deleteCharacter,
+  deleteRelationship,
   getAllCharacters,
 } from "../../../../redux/actions/characterActions";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
@@ -41,6 +43,7 @@ const CharacterCard = (props: IProps) => {
     dispatch(getAllCharacters(accessToken!));
     handleClose();
   };
+
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -131,10 +134,29 @@ const CharacterCard = (props: IProps) => {
                       (e: any) => e._id === relationship.partner
                     );
                     if (partner) {
+                      const deleteThisRelationship = () => {
+                        dispatch(
+                          deleteRelationship(
+                            props.character._id!,
+                            partner._id!,
+                            accessToken!
+                          )
+                        );
+
+                        dispatch(getAllCharacters(accessToken!));
+                      };
                       return (
-                        <p key={partner._id}>
-                          {relationship.relationshipType}: {partner.name}
-                        </p>
+                        <div>
+                          <p key={partner._id}>
+                            {relationship.relationshipType}: {partner.name}
+                            <button
+                              onClick={deleteThisRelationship}
+                              className="delete-relationship"
+                            >
+                              <AiOutlineCloseCircle />
+                            </button>
+                          </p>
+                        </div>
                       );
                     } else {
                       return <p>This partner has just been deleted</p>;

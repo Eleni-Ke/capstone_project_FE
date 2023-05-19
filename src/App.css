@@ -11,6 +11,8 @@ body {
 
 .navbar {
   background-color: #f4eec0;
+
+  background-image: url(/public/assets/gold-glitter-background.jpeg);
   border-right: 1px solid #89866f;
   width: 8rem;
   height: 100vh;
@@ -30,7 +32,7 @@ body {
 }
 
 .navbar svg {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-inline: center;
   color: black;
   margin-bottom: 0rem;
@@ -49,6 +51,9 @@ body {
   color: black;
   font-family: "Libre Baskerville", serif;
 }
+/* .home-link svg {
+  background-color: #90d17a;
+} */
 
 /* HOME */
 .home-main {
@@ -159,6 +164,11 @@ body {
   margin-left: 1rem;
   margin-top: 1rem;
   background-color: antiquewhite;
+}
+
+.delete-relationship {
+  border: none;
+  background-color: transparent;
 }
 
 /* COMMON CSS MAIN */

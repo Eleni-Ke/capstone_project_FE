@@ -156,6 +156,35 @@ export const addRelationship = (
   };
 };
 
+export const deleteRelationship = (
+  characterId: string,
+  partnerId: string,
+  accessToken: string
+) => {
+  return async (dispatch: any) => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BE_URL}/characters/${characterId}/relationship/${partnerId}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        console.log(data);
+        dispatch(getAllCharacters(accessToken));
+      } else {
+        console.log("try again!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export const addCharacterImage = (
   characterId: string,
   image: any,

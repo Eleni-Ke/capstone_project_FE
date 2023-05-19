@@ -1,5 +1,6 @@
 import { Nav, Navbar } from "react-bootstrap";
 import { GiSpellBook } from "react-icons/gi";
+import { FiSettings } from "react-icons/fi";
 import { IoPeopleCircleOutline } from "react-icons/io5";
 import { GrMapLocation } from "react-icons/gr";
 import { GiSewingString, GiNotebook } from "react-icons/gi";
@@ -36,7 +37,7 @@ const NavBar = () => {
   };
   return (
     <Navbar className="navbar flex-column fixed-top">
-      <Navbar.Brand href="/home" className="mx-auto">
+      <Navbar.Brand href="/home" className="mx-auto home-link">
         <GiSpellBook />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -71,6 +72,11 @@ const NavBar = () => {
           <TbCirclesRelation />
           <br />
           Relationships
+        </Nav.Link>
+        <Nav.Link href="/settings" className="settings-link">
+          <FiSettings />
+          <br />
+          Settings
         </Nav.Link>
         <Nav.Link onClick={logout} className="logout-btn">
           <RiLogoutCircleLine />
