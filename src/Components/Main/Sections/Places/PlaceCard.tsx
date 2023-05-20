@@ -70,7 +70,11 @@ const PlaceCard = (props: IProps) => {
                 })}
               </Carousel>
             ) : (
-              <Card.Img src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage.jpg" />
+              <Carousel interval={null}>
+                <Carousel.Item>
+                  <Card.Img src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage.jpg" />
+                </Carousel.Item>
+              </Carousel>
             )}
             <label className="change-avatar-input">
               {" "}

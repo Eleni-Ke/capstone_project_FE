@@ -1,18 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
-body {
-  cursor: url(https://p7.hiclipart.com/preview/236/967/645/black-quill-pen.jpg),
-    auto;
-  font-family: "Libre Baskerville", serif;
+body,
+* {
+  /* cursor: url(../public/assets/black-quill-pen.png), auto; */
+  /* font-family: "Libre Baskerville", serif; */
+
+  font-family: "Dancing Script", cursive;
 }
 
 /* NAVBAR */
 
 .navbar {
   background-color: #f4eec0;
-
-  background-image: url(/public/assets/gold-glitter-background.jpeg);
   border-right: 1px solid #89866f;
   width: 8rem;
   height: 100vh;
@@ -130,11 +131,11 @@ body {
 }
 
 /* MAIN PLACES */
-.main-places {
+/* .main-places {
   background-image: url(https://e0.pxfuel.com/wallpapers/411/263/desktop-wallpaper-old-map-old-map-background-on-bat-steampunk-map.jpg);
   background-size: cover;
   min-height: 80vh;
-}
+} */
 
 .main-places .single-card {
   background-image: url(https://i.pinimg.com/originals/2a/72/4b/2a724b9136e2a140fea30d7aaa73a4cd.jpg);
@@ -146,9 +147,9 @@ body {
 } */
 
 /* MAIN CHARACTERS */
-.main-characters {
+/* .main-characters {
   background-image: url(https://media.freestocktextures.com/cache/59/96/599621140678945f31cea52ff69aa415.jpg);
-}
+} */
 
 .relationships-icon {
   position: absolute;
@@ -178,27 +179,25 @@ body {
   margin-inline: auto;
   border-top-right-radius: 10px;
   background-repeat: repeat-y;
-  font-family: "Pinyon Script", cursive;
 }
 
 .main-section .single-card {
   background-color: transparent;
-  background-image: url(../public/assets/old\ paper.png);
+  background-image: url(../public/assets/paper.png);
   background-size: cover;
   background-repeat: no-repeat;
   border: none !important;
   width: 85%;
   margin-inline: auto;
-  margin-top: 5rem;
-  padding-top: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
   padding-right: 3rem;
-  max-height: fit-content;
+  height: 45.5rem;
 }
 
 .background-table {
-  background-image: url(../public/assets/gray-wooden-background-vector.png);
+  background-color: lightblue;
   background-size: contain;
-  padding-top: 5rem;
   min-height: 100vh;
   min-width: 100vw;
 }
@@ -208,7 +207,8 @@ body {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 2rem;
-  margin-top: -2rem;
+  margin-top: -3rem;
+  margin-left: 7rem;
 }
 
 .single-card .card-body {
@@ -218,7 +218,7 @@ body {
 }
 
 .single-card .carousel-inner {
-  height: 24rem;
+  height: 16rem;
 }
 
 .single-card .carousel-item {
@@ -226,23 +226,29 @@ body {
 }
 
 .single-card .card-img {
-  height: 24rem;
+  height: 100%;
+  width: 100%;
   object-fit: contain;
 }
 
 .single-card .card-image {
-  width: 23rem;
+  width: 15rem;
+  height: 21rem;
   border: 2px solid grey;
   text-align: center;
   padding: 20px;
   background-color: antiquewhite;
   box-shadow: -2px 3px 6px 3px rgba(0, 0, 0, 0.593);
 
-  transform: rotate(-5deg) translateY(-20px);
+  transform: rotate(-5deg) translateY(-20px) translateX(-100px);
   transition: all 0.2s linear;
   object-fit: contain;
-  overflow: hidden;
-  margin-left: -2rem;
+  margin-left: 12rem;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  filter: invert(100%);
 }
 
 .single-card img {
@@ -251,7 +257,7 @@ body {
 
 .single-card .card-image:hover {
   cursor: pointer;
-  transform: scale(1.15);
+  transform: scale(1.55);
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     -2px 8px 9px 1px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, -2px 8px 9px 1px rgba(0, 0, 0, 0);
@@ -270,18 +276,19 @@ body {
 }
 
 .single-card .card-text {
-  margin-top: 0;
+  margin-top: -1.5rem;
   font-size: 1.7rem;
-  height: 25rem;
+  height: 108%;
   overflow: auto;
-  margin-left: 3rem;
+  margin-left: -5rem;
+  margin-right: -2.1rem;
 }
 
 .edit-delete-button {
   font-size: 2rem;
   text-align: end;
-  margin-right: 3rem;
-  margin-top: 2rem;
+  margin-right: 0rem;
+  margin-top: 0.8rem;
   z-index: 2;
 }
 
@@ -293,17 +300,19 @@ body {
 @media screen and (max-width: 1000px) {
   .single-card .card-body {
     flex-direction: column;
-
+    width: 34rem;
     margin-inline: auto;
   }
-  .single-card .card-img {
+  /* .single-card .card-img {
     width: 85%;
     margin-inline: auto;
-  }
+  } */
   .single-card .card-text {
-    margin-top: 5rem;
+    margin-top: 2rem;
     font-size: 1.5rem;
-    margin-inline: auto;
+    height: 13rem;
+    margin-left: 2.5rem;
+    width: 100%;
   }
 }
 
@@ -332,27 +341,25 @@ body {
 
 /* LOGIN */
 .login-background {
-  background-image: url(../public/assets/gold-glitter-background.jpeg);
+  background-image: url(../public/assets/simple-water-color-abstract-background_596535-74\ copy.jpg);
   padding-top: 5%;
   padding-bottom: 5%;
-  font-family: "Pinyon Script", cursive;
+  font-family: "Libre Baskerville", serif;
+
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .LoginPage {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   height: 85vh;
-  background-image: url(../public/assets/old-book.png);
-  background-size: contain;
-  background-repeat: no-repeat;
   font-family: "Pinyon Script", cursive;
-  margin-left: 3%;
-  padding-left: 4%;
 }
 
 .LoginForm {
-  background-color: #ddae2f98;
   padding: 15px;
   padding-top: 5px;
   border-radius: 8px;
@@ -394,6 +401,7 @@ body {
 .inputFields h2 {
   margin-bottom: -1rem;
   font-size: 2rem;
+  font-family: "Pinyon Script", cursive;
 }
 
 .form-label {
@@ -450,11 +458,8 @@ body {
 }
 
 .info-text {
-  width: 38%;
-  position: absolute;
   top: 15%;
-  left: 55%;
-  font-size: 2.3rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-shadow: 0px 0px 3px #ffffff;
   text-align: center;

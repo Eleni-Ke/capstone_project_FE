@@ -99,17 +99,17 @@ const Login = () => {
               </div>
             </Form>
           </div>
+          <div className="info-text">
+            <p>
+              Enter Scriptorium, the Book Writing App where your literary dreams
+              take flight.
+              <br /> <br />
+              Organize your ideas, embark on new adventures, and unleash your
+              creativity upon the page. <br /> <br />
+              Welcome to a world of boundless inspiration.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="info-text">
-        <p>
-          Enter Scriptorium, the Book Writing App where your literary dreams
-          take flight.
-          <br /> <br />
-          Organize your ideas, embark on new adventures, and unleash your
-          creativity upon the page. <br /> <br />
-          Welcome to a world of boundless inspiration.
-        </p>
       </div>
     </div>
   );
