@@ -142,15 +142,27 @@ body,
 }
 
 /* MAIN NOTES */
-/* .main-notes {
-  background-image: url(https://media.freestocktextures.com/cache/59/96/599621140678945f31cea52ff69aa415.jpg);
-} */
+.main-notes.main-section .single-card {
+  height: fit-content;
+}
+
+.main-notes.main-section .single-body {
+  margin-right: 0;
+}
+
+.main-notes .single-card .card-text {
+  font-size: 1.7rem;
+  margin-left: 12%;
+  margin-top: -1rem;
+  line-height: 32px;
+}
+
+.main-notes .single-card .card-title {
+  font-size: 2.5rem;
+  margin-left: 3rem;
+}
 
 /* MAIN CHARACTERS */
-/* .main-characters {
-  background-image: url(https://media.freestocktextures.com/cache/59/96/599621140678945f31cea52ff69aa415.jpg);
-} */
-
 .relationships-icon {
   position: absolute;
   bottom: 15%;
@@ -275,7 +287,8 @@ body,
   margin-top: 1rem;
 }
 
-.single-card .card-text {
+.main-places .single-card .card-text,
+.main-characters .single-card .card-text {
   margin-top: -1.5rem;
   font-size: 1.7rem;
   height: 108%;
@@ -298,16 +311,15 @@ body,
 }
 
 @media screen and (max-width: 1000px) {
-  .single-card .card-body {
+  .main-places .single-card .card-body,
+  .main-characters .single-card .card-body {
     flex-direction: column;
     width: 34rem;
     margin-inline: auto;
   }
-  /* .single-card .card-img {
-    width: 85%;
-    margin-inline: auto;
-  } */
-  .single-card .card-text {
+
+  .main-places .single-card .card-text,
+  .main-characters .single-card .card-text {
     margin-top: 2rem;
     font-size: 1.5rem;
     height: 13rem;
