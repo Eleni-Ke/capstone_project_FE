@@ -23,7 +23,7 @@ body,
   align-items: center;
   color: black;
   box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.75);
-  /* margin-left: -8rem; */
+  margin-left: -6rem;
   transition: margin-left linear 0.2s;
   position: fixed;
   top: 0;
@@ -48,6 +48,10 @@ body,
   background-color: rgb(157, 0, 0);
 }
 
+.logout-btn.nav-link {
+  border-bottom: none;
+}
+
 .nav-link {
   text-align: center;
   color: rgba(218, 165, 32, 0.93);
@@ -65,6 +69,7 @@ body,
   border-radius: 50%;
   width: 4rem;
   height: 4rem;
+  margin-top: 10px;
   text-align: center;
   background-color: rgba(218, 165, 32, 0.591);
 }
@@ -89,31 +94,59 @@ body,
 
 .home-main #tsparticles {
   margin-top: 0;
+  background-image: none;
+  background-color: lightblue;
 }
 
 .sign {
   position: absolute;
-  top: 25%;
-  left: 45%;
+  bottom: 0;
+  left: 42%;
+  height: 70%;
+  padding-top: 3rem;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
+  background-image: url(../public/assets/sign.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .sign-link {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: "Libre Baskerville", serif;
-  background-color: rgb(120, 41, 41);
   margin-bottom: 1rem;
   padding: 8px 15px;
-  color: white;
+  color: black;
   width: fit-content;
+
+  text-shadow: 1px 1px 1px rgba(247, 247, 238, 0.962);
 }
 
-/* .sign-link.notes-sign {
-  padding-left: 35px;
-} */
+.characters-sign {
+  transform: rotate(-5deg);
+  margin-left: -1rem;
+  margin-top: -0.5rem;
+}
+
+.relationships-sign {
+  transform: rotate(4deg);
+  font-size: 1.7rem;
+  margin-top: 0.5rem;
+  margin-right: 1.5rem;
+}
+
+.places-sign {
+  transform: rotate(-5deg);
+  margin-left: -2rem;
+}
+
+.notes-sign {
+  transform: rotate(4deg);
+  margin-left: -2rem;
+  margin-top: 0.5rem;
+}
 
 /* BANNER */
 
@@ -122,14 +155,15 @@ body,
   padding-top: 3rem;
 }
 
-.banner h2 {
+.section-title {
   font-size: 3rem;
   text-decoration: underline;
   background-color: rgba(255, 255, 255, 0.887);
   width: fit-content;
-  padding: 5px;
+  padding: 5px 20px;
   margin-inline: auto;
   border-radius: 10px;
+  border: 2px solid goldenrod;
 }
 
 /* STORY LINE */
@@ -202,7 +236,7 @@ body,
   background-size: cover;
   background-repeat: no-repeat;
   border: none !important;
-  width: 85%;
+  width: 100%;
   margin-inline: auto;
   margin-top: 3rem;
   margin-bottom: 2rem;

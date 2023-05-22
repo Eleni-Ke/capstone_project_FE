@@ -13,7 +13,7 @@ const Notes = () => {
         <div className="background-table">
           <div className="main-section main-notes">
             <div className="banner-notes banner">
-              <h2>Notes.</h2>
+              <h2 className="section-title">Notes.</h2>
             </div>
             {allNotes &&
               allNotes.length > 0 &&

@@ -14,7 +14,7 @@ const Places = () => {
         <div className="background-table">
           <div className="main-section main-places">
             <div className="banner-places banner">
-              <h2>Places in story.</h2>
+              <h2 className="section-title">Places in story.</h2>
             </div>
             {allPlaces &&
               allPlaces.length > 0 &&

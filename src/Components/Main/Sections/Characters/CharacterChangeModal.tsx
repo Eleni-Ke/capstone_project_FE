@@ -55,7 +55,7 @@ const CharacterChangeModal = (props: IProps) => {
       <button onClick={handleShow}>
         <CiEdit />
       </button>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="addNewElementModal">
         <div className="modal-background character-modal-background">
           <div className="hole-one hole"></div>
           <div className="hole-two hole"></div>
@@ -79,7 +79,8 @@ const CharacterChangeModal = (props: IProps) => {
             <Form.Group controlId="formChangeCharacterDescription">
               <Form.Label>Description</Form.Label>
               <Form.Control
-                type="text"
+                as="textarea"
+                rows={4}
                 placeholder="Enter description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}

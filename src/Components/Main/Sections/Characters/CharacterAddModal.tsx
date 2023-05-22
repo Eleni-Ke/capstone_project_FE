@@ -86,7 +86,8 @@ const CharacterAddModal = () => {
             <Form.Group controlId="formCharacterDescription">
               <Form.Label>Description *</Form.Label>
               <Form.Control
-                type="text"
+                as="textarea"
+                rows={4}
                 placeholder="Enter description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}

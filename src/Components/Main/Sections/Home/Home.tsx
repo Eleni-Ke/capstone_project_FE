@@ -39,20 +39,20 @@ const Home = () => {
     <div className="d-flex">
       <NavBar />
       <div className="home-main position-absolute">
-        <h2>Welcome {currentUser?.username}</h2>
+        <h2 className="section-title">Welcome {currentUser?.username}</h2>
         <InteractiveBackground />
         <div className="sign">
           <Link to="/characters" className="characters-sign sign-link">
             Characters
-          </Link>
-          <Link to="/places" className="places-sign sign-link">
-            Places
           </Link>
           <Link
             to="/characters/relationships"
             className="relationships-sign sign-link"
           >
             Relationships
+          </Link>
+          <Link to="/places" className="places-sign sign-link">
+            Places
           </Link>
           <Link to="/notes" className="notes-sign sign-link">
             Notes
