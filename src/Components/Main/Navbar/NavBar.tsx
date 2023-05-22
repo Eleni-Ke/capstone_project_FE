@@ -55,11 +55,11 @@ const NavBar = () => {
           <br />
           Places
         </Nav.Link>
-        {/* <Nav.Link href="/storyLine" className="story-link ">
+        <Nav.Link href="/storyLine" className="story-link ">
           <GiSewingString />
           <br />
           Story
-        </Nav.Link> */}
+        </Nav.Link>
         <Nav.Link href="/notes" className="notes-link ">
           <GiNotebook />
           <br />

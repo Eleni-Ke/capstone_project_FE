@@ -87,8 +87,9 @@ const Relationships = () => {
       <div className="d-flex flex-column w-100 position-absolute">
         <div className="background-table">
           <div className="banner-story banner">
-            <h2>Relationships between characters:</h2>
+            <h2 className="section-title">Relationships between characters:</h2>
           </div>
+
           <div className="relationshipFlow-main">
             <ReactFlow
               nodes={nodes}

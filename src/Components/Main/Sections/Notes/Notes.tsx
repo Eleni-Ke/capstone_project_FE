@@ -7,7 +7,7 @@ const Notes = () => {
   ("accessToken");
   const allNotes = useAppSelector((state) => state.notes.notes);
   return (
-    <div className="d-flex">
+    <div className="d-flex notes-container">
       <NavBar />
       <div className="d-flex flex-column w-100 position-absolute">
         <div className="background-table">

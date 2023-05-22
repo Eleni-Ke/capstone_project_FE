@@ -39,7 +39,10 @@ const Home = () => {
     <div className="d-flex">
       <NavBar />
       <div className="home-main position-absolute">
-        <h2 className="section-title">Welcome {currentUser?.username}</h2>
+        <div className="position-absolute w-100 home-title-container">
+          <h2 className="section-title">Welcome {currentUser?.username}</h2>
+        </div>
+
         <InteractiveBackground />
         <div className="sign">
           <Link to="/characters" className="characters-sign sign-link">

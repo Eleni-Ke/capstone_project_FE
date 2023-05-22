@@ -41,7 +41,7 @@ body,
   border: 1px solid black;
   border-radius: 50%;
   padding: 10px;
-  background-color: rgba(218, 165, 32, 0.93);
+  background-color: rgb(220, 173, 53);
 }
 
 .logout-btn svg {
@@ -83,22 +83,25 @@ body,
   height: 100vh;
 }
 
+.home-title-container {
+  z-index: 2;
+}
+
 .home-main h2 {
   width: fit-content;
-
-  margin-left: 36%;
+  margin-inline: auto;
   padding: 1rem 1.5rem;
-  background-color: aliceblue;
+  background-color: #cce7f6;
   border-radius: 20px;
   z-index: 2;
-  position: absolute;
   margin-top: 2rem;
+  text-align: center;
 }
 
 .home-main #tsparticles {
   margin-top: 0;
   background-image: none;
-  background-color: lightblue;
+  background-image: url(../public/assets/blue-watercolor-abstract-background_3590-37.avif);
 }
 
 .sign {
@@ -123,8 +126,12 @@ body,
   padding: 8px 15px;
   color: black;
   width: fit-content;
-
   text-shadow: 1px 1px 1px rgba(247, 247, 238, 0.962);
+}
+
+.sign-link:hover {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.962);
 }
 
 .characters-sign {
@@ -177,17 +184,21 @@ body,
 }
 
 /* MAIN PLACES */
-.main-places .single-card {
-  background-image: url(https://i.pinimg.com/originals/2a/72/4b/2a724b9136e2a140fea30d7aaa73a4cd.jpg);
-}
 
 /* MAIN NOTES */
-.main-notes.main-section .single-card {
-  height: fit-content;
+.notes-container .background-table {
+  background-image: url(../public/assets/pink-bg.png);
+  background-size: cover;
 }
 
-.main-notes.main-section .single-body {
-  margin-right: 0;
+.main-notes.main-section .single-card {
+  height: fit-content;
+  min-height: 20rem;
+  max-height: 55rem;
+}
+
+.main-notes.main-section .card-body {
+  overflow: auto;
 }
 
 .main-notes .single-card .card-text {
@@ -319,13 +330,18 @@ body,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 15px;
+
+  margin-top: 0.5rem;
 }
 
-.change-avatar-input .input {
-  margin-left: 15px;
-  margin-top: 1rem;
+.change-avatar-input svg {
+  font-size: 40px;
+  margin-right: 10px;
 }
+
+/* .change-avatar-input .input {
+  margin-left: 15px;
+} */
 
 .main-places .single-card .card-text,
 .main-characters .single-card .card-text {
@@ -399,6 +415,7 @@ body,
   font-family: "Libre Baskerville", serif;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .LoginPage {
