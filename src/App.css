@@ -63,6 +63,9 @@ body,
   margin-top: 1px;
   font-size: 0.8rem;
 }
+.nav-link:hover {
+  color: white;
+}
 
 .home-link {
   border: 2px solid rgba(218, 165, 32, 0.591);
