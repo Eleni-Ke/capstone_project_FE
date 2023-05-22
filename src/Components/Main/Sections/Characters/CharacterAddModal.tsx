@@ -63,6 +63,11 @@ const CharacterAddModal = () => {
         </button>
       </div>
       <Modal show={show} onHide={handleClose} className="addNewElementModal">
+        <div className="modal-background character-modal-background">
+          <div className="hole-one hole"></div>
+          <div className="hole-two hole"></div>
+          <div className="hole-three hole"></div>
+        </div>
         <Modal.Header closeButton>
           <Modal.Title>Add a character here!</Modal.Title>
         </Modal.Header>

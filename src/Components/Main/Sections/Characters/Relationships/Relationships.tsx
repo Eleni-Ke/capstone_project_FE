@@ -21,10 +21,13 @@ const Relationships = () => {
             img,
           },
           position: {
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
+            x: Math.random() * (window.innerWidth * 0.5),
+            y: Math.random() * (window.innerHeight * 0.5),
           },
           type: "default",
+          style: {
+            backgroundColor: "#ecd7de",
+          },
         };
         return node;
       }
@@ -34,11 +37,24 @@ const Relationships = () => {
 
   const generateEdges = () => {
     const newEdges = allCharacters.flatMap((character: ICharacter) => {
-      return character.relationships!.map((relationship: IRelationship) => {
+      return character.relationships!.flatMap((relationship: IRelationship) => {
+        const edgeId = character._id + relationship.partner;
+
+        // // Check if the edge already exists
+        // const existingEdge = edges.find((edge: Edge) => edge.id === edgeId);
+
+        // if (existingEdge) {
+        //   return [];
+        // }
+
         const edge: Edge = {
-          id: character._id + relationship.partner,
+          id: edgeId,
           source: character._id!,
           target: relationship.partner,
+
+          label: relationship.relationshipType,
+
+          type: "custom",
         };
         return edge;
       });
@@ -69,15 +85,17 @@ const Relationships = () => {
       <NavBar />
 
       <div className="d-flex flex-column w-100 position-absolute">
-        <div className="banner-story banner">
-          <h2>Relationships between characters:</h2>
-        </div>
-        <div className="relationshipFlow-main">
-          <ReactFlow
-            nodes={nodes}
-            onNodeDragStop={onNodeDragStop}
-            edges={edges}
-          />
+        <div className="background-table">
+          <div className="banner-story banner">
+            <h2>Relationships between characters:</h2>
+          </div>
+          <div className="relationshipFlow-main">
+            <ReactFlow
+              nodes={nodes}
+              onNodeDragStop={onNodeDragStop}
+              edges={edges}
+            />
+          </div>
         </div>
       </div>
     </div>

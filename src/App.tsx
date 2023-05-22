@@ -9,6 +9,7 @@ import Registration from "./Components/Login/Registration";
 import StoryLine from "./Components/Main/Sections/StoryLine/StoryLine";
 import Relationships from "./Components/Main/Sections/Characters/Relationships/Relationships";
 import Notes from "./Components/Main/Sections/Notes/Notes";
+import Settings from "./Components/Main/Settings/Settings";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/places" element={<Places />} />
         <Route path="/storyLine" element={<StoryLine />} />
         <Route path="/notes" element={<Notes />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
   );

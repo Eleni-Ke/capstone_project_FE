@@ -56,6 +56,11 @@ const CharacterChangeModal = (props: IProps) => {
         <CiEdit />
       </button>
       <Modal show={show} onHide={handleClose}>
+        <div className="modal-background character-modal-background">
+          <div className="hole-one hole"></div>
+          <div className="hole-two hole"></div>
+          <div className="hole-three hole"></div>
+        </div>
         <Modal.Header closeButton>
           <Modal.Title>Change the character here!</Modal.Title>
         </Modal.Header>

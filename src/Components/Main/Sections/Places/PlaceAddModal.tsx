@@ -57,6 +57,11 @@ const PlaceAddModal = () => {
         </a>
       </div>
       <Modal show={show} onHide={handleClose} className="addNewElementModal">
+        <div className="modal-background place-modal-background">
+          <div className="hole-one hole"></div>
+          <div className="hole-two hole"></div>
+          <div className="hole-three hole"></div>
+        </div>
         <Modal.Header closeButton>
           <Modal.Title>Add a place here!</Modal.Title>
         </Modal.Header>

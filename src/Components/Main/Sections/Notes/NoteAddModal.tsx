@@ -40,11 +40,15 @@ const NoteAddModal = () => {
           <BsArrowUpCircle />
         </a>
       </div>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="addNewElementModal">
+        <div className="notes-modal-background modal-background">
+          <div className="hole-one hole"></div>
+          <div className="hole-two hole"></div>
+        </div>
         <Modal.Header closeButton>
           <Modal.Title>Add a note here!</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="modal-card">
           <Form>
             <Form.Group controlId="formAddNoteTitle">
               <Form.Label>Title</Form.Label>

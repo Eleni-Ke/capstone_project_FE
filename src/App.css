@@ -13,16 +13,17 @@ body,
 /* NAVBAR */
 
 .navbar {
-  background-color: #f4eec0;
-  border-right: 1px solid #89866f;
-  width: 8rem;
+  background-color: #123873;
+  border: 8px solid rgb(46, 42, 42);
+  border-radius: 15px;
+  width: 7.5rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: black;
   box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.75);
-  margin-left: -7rem;
+  /* margin-left: -8rem; */
   transition: margin-left linear 0.2s;
   position: fixed;
   top: 0;
@@ -40,7 +41,7 @@ body,
   border: 1px solid black;
   border-radius: 50%;
   padding: 10px;
-  background-color: #aed09e;
+  background-color: rgba(218, 165, 32, 0.93);
 }
 
 .logout-btn svg {
@@ -49,12 +50,24 @@ body,
 
 .nav-link {
   text-align: center;
-  color: black;
+  color: rgba(218, 165, 32, 0.93);
   font-family: "Libre Baskerville", serif;
+  border-top: 2px solid rgba(218, 165, 32, 0.591);
+  border-bottom: 2px solid rgba(218, 165, 32, 0.591);
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 1px;
+  font-size: 0.8rem;
 }
-/* .home-link svg {
-  background-color: #90d17a;
-} */
+
+.home-link {
+  border: 2px solid rgba(218, 165, 32, 0.591);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  background-color: rgba(218, 165, 32, 0.591);
+}
 
 /* HOME */
 .home-main {
@@ -65,10 +78,9 @@ body,
 .home-main h2 {
   width: fit-content;
 
-  margin-left: 40%;
+  margin-left: 36%;
   padding: 1rem 1.5rem;
   background-color: aliceblue;
-  border: 1.5px solid rgb(128, 188, 241);
   border-radius: 20px;
   z-index: 2;
   position: absolute;
@@ -79,32 +91,29 @@ body,
   margin-top: 0;
 }
 
-.place-image {
-  width: 15rem;
-  height: 15rem;
-  object-fit: cover;
-  border-radius: 50%;
+.sign {
   position: absolute;
   top: 25%;
-  left: 57%;
-  transition: all linear 0.15s;
+  left: 45%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
-.place-image:hover,
-.character-image:hover {
-  border-radius: 5%;
+.sign-link {
+  font-size: 2rem;
+  font-family: "Libre Baskerville", serif;
+  background-color: rgb(120, 41, 41);
+  margin-bottom: 1rem;
+  padding: 8px 15px;
+  color: white;
+  width: fit-content;
 }
 
-.character-image {
-  width: 18rem;
-  height: 18rem;
-  object-fit: cover;
-  border-radius: 50%;
-  position: absolute;
-  top: 40%;
-  left: 15%;
-  transition: all linear 0.15s;
-}
+/* .sign-link.notes-sign {
+  padding-left: 35px;
+} */
 
 /* BANNER */
 
@@ -131,12 +140,6 @@ body,
 }
 
 /* MAIN PLACES */
-/* .main-places {
-  background-image: url(https://e0.pxfuel.com/wallpapers/411/263/desktop-wallpaper-old-map-old-map-background-on-bat-steampunk-map.jpg);
-  background-size: cover;
-  min-height: 80vh;
-} */
-
 .main-places .single-card {
   background-image: url(https://i.pinimg.com/originals/2a/72/4b/2a724b9136e2a140fea30d7aaa73a4cd.jpg);
 }
@@ -332,7 +335,7 @@ body,
 .bottom-right-icons {
   position: fixed;
   bottom: 1rem;
-  right: 10%;
+  right: 5%;
   display: flex;
   z-index: 2;
   font-size: 3rem;
@@ -355,10 +358,9 @@ body,
 .login-background {
   background-image: url(../public/assets/simple-water-color-abstract-background_596535-74\ copy.jpg);
   padding-top: 5%;
-  padding-bottom: 5%;
+  height: 100vh;
   font-family: "Libre Baskerville", serif;
-
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -375,7 +377,7 @@ body,
   padding: 15px;
   padding-top: 5px;
   border-radius: 8px;
-  max-width: 350px;
+  max-width: 400px;
   width: 90%;
 
   margin-left: 6.3%;
@@ -402,10 +404,6 @@ body,
   font-size: 1.5rem;
 }
 
-.registration-page .LoginForm {
-  margin-top: -2.3rem;
-}
-
 .form-text {
   width: 100%;
 }
@@ -413,7 +411,7 @@ body,
 .inputFields h2 {
   margin-bottom: -1rem;
   font-size: 2rem;
-  font-family: "Pinyon Script", cursive;
+  /* font-family: "Pinyon Script", cursive; */
 }
 
 .form-label {
@@ -461,7 +459,7 @@ body,
 .AppInfo h1 {
   font-size: 3rem;
   color: #c9a43c;
-  margin-bottom: 15%;
+  margin-bottom: 1%;
   text-shadow: 3px 2px 3px rgba(247, 247, 238, 0.2);
   border: 0.5px solid #c9a43c;
   padding: 5px 10px;
@@ -470,24 +468,21 @@ body,
 }
 
 .info-text {
-  top: 15%;
   font-size: 1.3rem;
   font-weight: bold;
-  text-shadow: 0px 0px 3px #ffffff;
   text-align: center;
+  margin-top: 2rem;
 }
 
-/* .AppInfo p {
-  color: #cab680;
-  line-height: 1.5;
-  font-size: 1.2rem;
-} */
+.info-text p {
+  line-height: 28px;
+}
 
 /* RELATIONSHIPS */
 
 .relationshipFlow-main {
   width: 100vw;
-  height: 75vh;
+  height: 100vh;
 }
 
 #tsparticles {
@@ -501,5 +496,32 @@ body,
 /* ADD ELEMENT MODAL */
 .addNewElementModal {
   max-height: 90%;
+  width: 60%;
   overflow: auto;
+  object-fit: contain;
+}
+
+.modal-background {
+  background-color: white;
+  width: 3rem;
+  height: 20.5rem;
+  position: absolute;
+  top: 0;
+  left: -9%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal-background .hole {
+  height: 1.2rem;
+  width: 1.2rem;
+  background-color: #576b73;
+  border-radius: 50%;
+}
+
+.modal-background.character-modal-background,
+.modal-background.place-modal-background {
+  height: 100%;
 }

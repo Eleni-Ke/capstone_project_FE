@@ -37,7 +37,7 @@ const NavBar = () => {
   };
   return (
     <Navbar className="navbar flex-column fixed-top">
-      <Navbar.Brand href="/home" className="mx-auto home-link">
+      <Navbar.Brand href="/home" className="mx-auto home-link ">
         <GiSpellBook />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -45,35 +45,35 @@ const NavBar = () => {
         id="basic-navbar-nav"
         className="justify-content-end navbar-icons flex-column"
       >
-        <Nav.Link href="/characters" className="character-link">
+        <Nav.Link href="/characters" className="character-link ">
           <IoPeopleCircleOutline />
           <br />
           Characters
         </Nav.Link>
-        <Nav.Link href="/places" className="places-link">
+        <Nav.Link href="/places" className="places-link ">
           <GrMapLocation />
           <br />
           Places
         </Nav.Link>
-        <Nav.Link href="/storyLine" className="story-link">
+        <Nav.Link href="/storyLine" className="story-link ">
           <GiSewingString />
           <br />
           Story
         </Nav.Link>
-        <Nav.Link href="/notes" className="notes-link">
+        <Nav.Link href="/notes" className="notes-link ">
           <GiNotebook />
           <br />
           Notes
         </Nav.Link>
         <Nav.Link
           href="/characters/relationships"
-          className="relationship-link"
+          className="relationship-link "
         >
           <TbCirclesRelation />
           <br />
           Relationships
         </Nav.Link>
-        <Nav.Link href="/settings" className="settings-link">
+        <Nav.Link href="/settings" className="settings-link ">
           <FiSettings />
           <br />
           Settings

@@ -41,47 +41,23 @@ const Home = () => {
       <div className="home-main position-absolute">
         <h2>Welcome {currentUser?.username}</h2>
         <InteractiveBackground />
-        <Link to="/characters">
-          {characters.characters.length > 0 &&
-          characters.characters[0].images.length > 0 ? (
-            <img
-              src={characters.characters[0].images[0]}
-              alt="character"
-              className="character-image"
-            />
-          ) : (
-            <img
-              src="https://cdn.shopify.com/s/files/1/0850/2114/files/tips_to_help_heighten_senses_480x480.png?v=1624399167"
-              alt="character"
-              className="character-image"
-            />
-          )}
-        </Link>
-        <Link to="/places">
-          {places.places > 0 && places.places[0].images.length > 0 ? (
-            <img
-              src={places.places[0].images[0]}
-              className="place-image"
-              alt="places"
-            />
-          ) : (
-            <img
-              src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2020/01/Chancellors-Swiss-Cottage.jpg"
-              alt="place"
-              className="place-image"
-            />
-          )}
-        </Link>
-        {/* <Link to="#">
-          <img
-            src="https://c8.alamy.com/compde/cpc302/der-grosse-maskenball-second-empire-zeitraum-kleid-anlasslich-der-veranstaltung-vichy-feiert-napoleon-iii-vichy-cpc302.jpg"
-            alt="scene"
-            className="scene-image"
-          />
-        </Link>
-        <Link to="#">
-          <p className="quote">This is a very interesting quote</p>
-        </Link> */}
+        <div className="sign">
+          <Link to="/characters" className="characters-sign sign-link">
+            Characters
+          </Link>
+          <Link to="/places" className="places-sign sign-link">
+            Places
+          </Link>
+          <Link
+            to="/characters/relationships"
+            className="relationships-sign sign-link"
+          >
+            Relationships
+          </Link>
+          <Link to="/notes" className="notes-sign sign-link">
+            Notes
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -40,6 +40,10 @@ const NoteChangeModal = (props: IProps) => {
         <CiEdit />
       </button>
       <Modal show={show} onHide={handleClose}>
+        <div className="notes-modal-background modal-background">
+          <div className="hole-one hole"></div>
+          <div className="hole-two hole"></div>
+        </div>
         <Modal.Header closeButton>
           <Modal.Title>Change the note here!</Modal.Title>
         </Modal.Header>

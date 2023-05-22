@@ -58,6 +58,10 @@ const AddRelationshipModal = (props: IProps) => {
         </button>
       </div>
       <Modal show={show} onHide={handleClose}>
+        <div className="notes-modal-background modal-background">
+          <div className="hole-one hole"></div>
+          <div className="hole-two hole"></div>
+        </div>
         <Modal.Header closeButton>
           <Modal.Title>Add a relationship here!</Modal.Title>
         </Modal.Header>
