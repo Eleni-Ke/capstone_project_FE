@@ -475,6 +475,12 @@ body,
   border: none;
 }
 
+/* .button-container .main-button:hover {
+  background-color: #fff;
+  color: #2a1b18;
+  border: none;
+} */
+
 .button-container .google-button {
   background-color: #ffffff4e;
   color: #2a1b18;
