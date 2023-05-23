@@ -7,6 +7,7 @@ import {
 } from "../../../../redux/actions/storyActions";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import { IStory } from "../../../../redux/interfaces/IStory";
+import StoryChangeModal from "./StoryChangeModal";
 
 interface IProps {
   story: IStory;
@@ -19,7 +20,6 @@ const StoryCard = (props: IProps) => {
 
   const dispatch = useAppDispatch();
   const accessToken = localStorage.getItem("accessToken");
-  //   const allStories = useAppSelector((state) => state.stories.stories);
   const allPlaces = useAppSelector((state) => state.places.places);
   const allCharacters = useAppSelector((state) => state.characters.characters);
   const currentStory = props.story;
@@ -46,7 +46,7 @@ const StoryCard = (props: IProps) => {
       </Modal>
       <Card className="single-card">
         <div className="edit-delete-button">
-          {/* <StoryChangeModal character={props.story} /> */}
+          <StoryChangeModal story={props.story} />
           <button onClick={handleShow}>
             <CiTrash />
           </button>
