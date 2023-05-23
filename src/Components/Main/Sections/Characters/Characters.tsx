@@ -1,11 +1,21 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../../../redux/hooks";
 import NavBar from "../../Navbar/NavBar";
 import CharacterAddModal from "./CharacterAddModal";
 import CharacterCard from "./CharacterCard";
 
 const Characters = () => {
-  ("accessToken");
   const allCharacters = useAppSelector((state) => state.characters.characters);
+  const accessToken = localStorage.getItem("accessToken");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!accessToken) {
+      navigate("/");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="d-flex">

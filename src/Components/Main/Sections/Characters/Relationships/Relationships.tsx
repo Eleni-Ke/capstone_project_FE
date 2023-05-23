@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactFlow, { Edge, Node, NodeDragHandler } from "react-flow-renderer";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../../../../redux/hooks";
 import { ICharacter } from "../../../../../redux/interfaces/ICharacter";
 import { IRelationship } from "../../../../../redux/interfaces/IRelationship";
@@ -9,6 +10,10 @@ const Relationships = () => {
   const allCharacters = useAppSelector((state) => state.characters.characters);
   const [nodes, setNodes] = useState<Node[]>([]);
   const [edges, setEdges] = useState<Edge[]>([]);
+
+  const accessToken = localStorage.getItem("accessToken");
+
+  const navigate = useNavigate();
 
   const generateNodes = () => {
     const newNodes = allCharacters.map(
@@ -62,6 +67,9 @@ const Relationships = () => {
     setEdges(newEdges);
   };
   useEffect(() => {
+    if (!accessToken) {
+      navigate("/");
+    }
     generateNodes();
     generateEdges();
     // eslint-disable-next-line react-hooks/exhaustive-deps

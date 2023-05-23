@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { setCurrentUser } from "../../redux/actions";
@@ -36,6 +36,16 @@ const Registration = () => {
       console.log(error);
     }
   };
+
+  const accessToken = localStorage.getItem("accessToken");
+
+  useEffect(() => {
+    if (accessToken) {
+      navigate("/home");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="login-background registration-page">
       <div className="LoginPage">

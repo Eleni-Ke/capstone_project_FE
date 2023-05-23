@@ -255,7 +255,7 @@ body,
 
 .background-table {
   background-image: url(../public/assets/new-try-blue.jpg);
-  background-size: contain;
+  background-size: cover;
   min-height: 100vh;
   min-width: 100vw;
 }

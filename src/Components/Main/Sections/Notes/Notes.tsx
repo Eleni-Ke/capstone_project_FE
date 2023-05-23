@@ -1,11 +1,22 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../../../redux/hooks";
 import NavBar from "../../Navbar/NavBar";
 import NoteAddModal from "./NoteAddModal";
 import NoteCard from "./NoteCard";
 
 const Notes = () => {
-  ("accessToken");
   const allNotes = useAppSelector((state) => state.notes.notes);
+  const accessToken = localStorage.getItem("accessToken");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!accessToken) {
+      navigate("/");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="d-flex notes-container">
       <NavBar />

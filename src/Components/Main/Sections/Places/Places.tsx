@@ -2,10 +2,21 @@ import NavBar from "../../Navbar/NavBar";
 import PlaceCard from "./PlaceCard";
 import PlaceAddModal from "./PlaceAddModal";
 import { useAppSelector } from "../../../../redux/hooks";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Places = () => {
-  ("accessToken");
   const allPlaces = useAppSelector((state) => state.places.places);
+
+  const accessToken = localStorage.getItem("accessToken");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!accessToken) {
+      navigate("/");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="d-flex places-container">

@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getMeInfo } from "../../../../redux/actions";
 import { getAllCharacters } from "../../../../redux/actions/characterActions";
 import { getAllNotes } from "../../../../redux/actions/notesActions";
@@ -11,12 +11,11 @@ import InteractiveBackground from "./InteractiveBackground";
 
 const Home = () => {
   let currentUser = useAppSelector((state) => state.currentUser.currentUser);
-  let characters = useAppSelector((state) => state.characters);
-  let places = useAppSelector((state) => state.places);
-  let notes = useAppSelector((state) => state.notes);
 
   const dispatch = useAppDispatch();
   const accessToken = localStorage.getItem("accessToken");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const tokenCookie = Cookies.get("accessToken");
@@ -27,6 +26,9 @@ const Home = () => {
       dispatch(getAllPlaces(tokenCookie!));
       dispatch(getAllNotes(accessToken!));
     } else {
+      if (!accessToken) {
+        navigate("/");
+      }
       dispatch(getAllCharacters(accessToken!));
       dispatch(getAllNotes(accessToken!));
       dispatch(getAllPlaces(accessToken!));
