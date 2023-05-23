@@ -8,7 +8,7 @@ const Places = () => {
   const allPlaces = useAppSelector((state) => state.places.places);
 
   return (
-    <div className="d-flex">
+    <div className="d-flex places-container">
       <NavBar />
       <div className="d-flex flex-column w-100 position-absolute">
         <div className="background-table">

@@ -85,7 +85,7 @@ const Relationships = () => {
       <NavBar />
 
       <div className="d-flex flex-column w-100 position-absolute">
-        <div className="background-table">
+        <div className="relationship-background">
           <div className="banner-story banner">
             <h2 className="section-title">Relationships between characters:</h2>
           </div>

@@ -4,9 +4,6 @@
 
 body,
 * {
-  /* cursor: url(../public/assets/black-quill-pen.png), auto; */
-  /* font-family: "Libre Baskerville", serif; */
-
   font-family: "Dancing Script", cursive;
 }
 
@@ -186,10 +183,6 @@ body,
 /* MAIN PLACES */
 
 /* MAIN NOTES */
-.notes-container .background-table {
-  background-image: url(../public/assets/pink-bg.png);
-  background-size: cover;
-}
 
 .main-notes.main-section .single-card {
   height: fit-content;
@@ -250,17 +243,27 @@ body,
   background-size: cover;
   background-repeat: no-repeat;
   border: none !important;
-  width: 100%;
+  width: 80%;
   margin-inline: auto;
   margin-top: 3rem;
   margin-bottom: 2rem;
   padding-right: 3rem;
   height: 45.5rem;
+
+  box-shadow: -2px 4px 10px 1px rgba(0, 0, 0, 0.593);
 }
 
 .background-table {
-  background-color: lightblue;
+  background-image: url(../public/assets/new-try-blue.jpg);
   background-size: contain;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.relationship-background {
+  background-image: url(../public/assets/blue-watercolor-abstract-background_3590-37.avif);
+
+  background-size: cover;
   min-height: 100vh;
   min-width: 100vw;
 }
