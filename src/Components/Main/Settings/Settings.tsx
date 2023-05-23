@@ -20,10 +20,11 @@ const Settings = () => {
       <div className="d-flex flex-column w-100">
         <div className="background-table d-flex justify-content-center align-items-center">
           <div className="p-3 contruction-message">
+            <p></p>
             <IoIosConstruct />
             <p>
-              This new feature is currently being built! <br /> Stay tuned to
-              see when you can use it!
+              <u>Settings:</u> <br /> This new feature is currently being built!{" "}
+              <br /> Stay tuned to see when you can use it!
             </p>
           </div>
         </div>

@@ -69,6 +69,7 @@ const StoryLine = () => {
           <div className="p-3 contruction-message">
             <IoIosConstruct />
             <p>
+              <u>Story Line:</u> <br />
               This new feature is currently being built! <br /> Stay tuned to
               see when you can use it!
             </p>
