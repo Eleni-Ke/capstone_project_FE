@@ -5,6 +5,7 @@ import { getMeInfo } from "../../../../redux/actions";
 import { getAllCharacters } from "../../../../redux/actions/characterActions";
 import { getAllNotes } from "../../../../redux/actions/notesActions";
 import { getAllPlaces } from "../../../../redux/actions/placeActions";
+import { getAllStories } from "../../../../redux/actions/storyActions";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import NavBar from "../../Navbar/NavBar";
 import InteractiveBackground from "./InteractiveBackground";
@@ -25,6 +26,7 @@ const Home = () => {
       dispatch(getAllCharacters(tokenCookie!));
       dispatch(getAllPlaces(tokenCookie!));
       dispatch(getAllNotes(accessToken!));
+      dispatch(getAllStories(accessToken!));
     } else {
       if (!accessToken) {
         navigate("/");
@@ -32,6 +34,7 @@ const Home = () => {
       dispatch(getAllCharacters(accessToken!));
       dispatch(getAllNotes(accessToken!));
       dispatch(getAllPlaces(accessToken!));
+      dispatch(getAllStories(accessToken!));
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

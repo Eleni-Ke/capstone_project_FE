@@ -134,7 +134,7 @@ const CharacterCard = (props: IProps) => {
                 </li>
               )}
               <li>
-                <strong>Relationships:</strong>
+                <strong>Relationships: </strong>
                 {props.character.relationships &&
                   props.character.relationships.map((relationship) => {
                     const partner = allCharacters.find(

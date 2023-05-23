@@ -27,7 +27,7 @@ export const addStory = (newStory: IStory, accessToken: string) => {
   };
 };
 
-const getAllStories = (accessToken: string) => {
+export const getAllStories = (accessToken: string) => {
   return async (dispatch: any) => {
     try {
       const res = await fetch(`${process.env.REACT_APP_BE_URL}/stories`, {
