@@ -468,7 +468,6 @@ body,
 .inputFields h2 {
   margin-bottom: -1rem;
   font-size: 2rem;
-  /* font-family: "Pinyon Script", cursive; */
 }
 
 .form-label {
@@ -587,4 +586,17 @@ body,
 .modal-background.character-modal-background,
 .modal-background.place-modal-background {
   height: 100%;
+}
+
+/* CONSTRUCTION */
+.contruction-message {
+  width: fit-content;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 4px solid #dc3545;
+  font-family: "Libre Baskerville", serif;
+}
+
+.contruction-message p {
+  font-family: inherit;
 }
