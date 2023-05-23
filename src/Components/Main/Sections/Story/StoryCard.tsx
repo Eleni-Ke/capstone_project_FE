@@ -11,6 +11,7 @@ import StoryChangeModal from "./StoryChangeModal";
 
 interface IProps {
   story: IStory;
+  index: number;
 }
 
 const StoryCard = (props: IProps) => {
@@ -44,14 +45,18 @@ const StoryCard = (props: IProps) => {
           </Button>
         </Modal.Footer>
       </Modal>
-      <Card className="single-card">
+      <Card className="single-story-card">
         <div className="edit-delete-button">
           <StoryChangeModal story={props.story} />
           <button onClick={handleShow}>
             <CiTrash />
           </button>
         </div>
-        <Card.Title>{currentStory.title}</Card.Title>
+        <Card.Title className="text-center">
+          Number {props.index}: <br />
+          <br />
+          {currentStory.title}
+        </Card.Title>
         <Card.Body>
           <div className="card-text">
             <ul>

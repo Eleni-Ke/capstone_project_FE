@@ -13,6 +13,7 @@ import Cookies from "js-cookie";
 import { RESET_CHARACTERS } from "../../../redux/actions/characterActions";
 import { RESET_PLACES } from "../../../redux/actions/placeActions";
 import { RESET_NOTES } from "../../../redux/actions/notesActions";
+import { RESET_STORIES } from "../../../redux/actions/storyActions";
 
 const NavBar = () => {
   const dispatch = useAppDispatch();
@@ -30,6 +31,9 @@ const NavBar = () => {
     });
     dispatch({
       type: RESET_NOTES,
+    });
+    dispatch({
+      type: RESET_STORIES,
     });
 
     Cookies.remove("accessToken");

@@ -27,15 +27,23 @@ const Story = () => {
       <NavBar />
       <div className="d-flex flex-column w-100 position-absolute">
         <div className="background-table d-flex justify-content-center">
-          <div className="main-section main-stories">
+          <div className="main-section main-stories mx-2 mb-4">
             <div className="banner-story banner">
               <h2 className="section-title">The Story</h2>
             </div>
-            {allStories &&
-              allStories.length > 0 &&
-              allStories.map((story: any) => {
-                return <StoryCard story={story} key={story._id} />;
-              })}
+            <div className="d-flex flex-wrap justify-content-around">
+              {allStories &&
+                allStories.length > 0 &&
+                allStories.map((story: any, index: number) => {
+                  return (
+                    <StoryCard
+                      story={story}
+                      index={index + 1}
+                      key={story._id}
+                    />
+                  );
+                })}
+            </div>
           </div>
         </div>
       </div>
