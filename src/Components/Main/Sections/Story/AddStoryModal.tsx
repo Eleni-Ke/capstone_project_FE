@@ -47,17 +47,18 @@ const AddStoryModal = () => {
     handleClose();
   };
 
-  const handleCharacterChange = (selectedOptions: any) => {
-    setCharacters(selectedOptions);
-  };
-
-  const handlePlaceChange = (selectedOptions: any) => {
-    setPlaces(selectedOptions);
-  };
-
-  const characterOptions = charactersToAdd.map((character: ICharacter) => ({
+  let characterOptions = charactersToAdd.map((character: ICharacter) => ({
     value: character._id,
     label: character.name,
+  }));
+
+  let addedCharacters = charactersToAdd.filter((character: ICharacter) =>
+    characters.includes(character._id!)
+  );
+
+  let addedCharactersValue = addedCharacters.map((char: ICharacter) => ({
+    value: char._id,
+    label: char.name,
   }));
 
   const placeOptions = placesToAdd.map((place: IPlace) => ({
@@ -65,6 +66,14 @@ const AddStoryModal = () => {
     label: place.placeName,
   }));
 
+  let addedPlaces = placesToAdd.filter((place: IPlace) =>
+    places.includes(place._id!)
+  );
+
+  let addedPlacesValue = addedPlaces.map((pl: IPlace) => ({
+    value: pl._id,
+    label: pl.placeName,
+  }));
   return (
     <>
       <div className="bottom-right-icons">
@@ -114,8 +123,14 @@ const AddStoryModal = () => {
                 options={characterOptions}
                 isMulti
                 placeholder="Choose characters"
-                value={characters}
-                onChange={handleCharacterChange}
+                value={addedCharactersValue}
+                onChange={(selectedOptions) => {
+                  const selectedValues = selectedOptions.map(
+                    (option: any) => option.value
+                  );
+
+                  setCharacters(selectedValues);
+                }}
               />
             </Form.Group>
             <Form.Group controlId="formAddPlacesToStory">
@@ -124,8 +139,13 @@ const AddStoryModal = () => {
                 options={placeOptions}
                 isMulti
                 placeholder="Choose places"
-                value={places}
-                onChange={handlePlaceChange}
+                value={addedPlacesValue}
+                onChange={(selectedOptions) => {
+                  const selectedValues = selectedOptions.map(
+                    (option: any) => option.value
+                  );
+                  setPlaces(selectedValues);
+                }}
               />
             </Form.Group>
           </Form>

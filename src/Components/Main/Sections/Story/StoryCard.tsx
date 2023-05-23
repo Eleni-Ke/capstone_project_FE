@@ -66,7 +66,7 @@ const StoryCard = (props: IProps) => {
                     const character = allCharacters.find(
                       (e: any) => e._id === characterId
                     );
-                    return <span key={character._id}>{character.name}</span>;
+                    return <p key={character._id}>{character.name}</p>;
                   })}
               </li>
               <li>
@@ -74,7 +74,7 @@ const StoryCard = (props: IProps) => {
                 {currentStory.places &&
                   currentStory.places.map((placeId) => {
                     const place = allPlaces.find((e: any) => e._id === placeId);
-                    return <span key={place._id}>{place.placeName}</span>;
+                    return <p key={place._id}>{place.placeName}</p>;
                   })}
               </li>
             </ul>

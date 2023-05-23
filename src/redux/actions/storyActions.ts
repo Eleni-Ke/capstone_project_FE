@@ -86,8 +86,7 @@ export const deleteStory = (storyId: string, accessToken: string) => {
         {
           method: "DELETE",
           headers: {
-            Authorization: `Bearer ${accessToken}`,
-            "Content-type": "application/json",
+            Authorization: `Bearer ${accessToken}`
           },
         }
       );
