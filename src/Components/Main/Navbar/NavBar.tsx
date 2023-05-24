@@ -49,25 +49,15 @@ const NavBar = () => {
         id="basic-navbar-nav"
         className="justify-content-end navbar-icons flex-column"
       >
-        <Nav.Link href="/characters" className="character-link ">
-          <IoPeopleCircleOutline />
-          <br />
-          Characters
-        </Nav.Link>
-        <Nav.Link href="/places" className="places-link ">
-          <GrMapLocation />
-          <br />
-          Places
-        </Nav.Link>
         <Nav.Link href="/story" className="story-link ">
           <GiSewingString />
           <br />
           Story
         </Nav.Link>
-        <Nav.Link href="/notes" className="notes-link ">
-          <GiNotebook />
+        <Nav.Link href="/characters" className="character-link ">
+          <IoPeopleCircleOutline />
           <br />
-          Notes
+          Characters
         </Nav.Link>
         <Nav.Link
           href="/characters/relationships"
@@ -77,6 +67,18 @@ const NavBar = () => {
           <br />
           Relationships
         </Nav.Link>
+        <Nav.Link href="/places" className="places-link ">
+          <GrMapLocation />
+          <br />
+          Places
+        </Nav.Link>
+
+        <Nav.Link href="/notes" className="notes-link ">
+          <GiNotebook />
+          <br />
+          Notes
+        </Nav.Link>
+
         <Nav.Link href="/settings" className="settings-link ">
           <FiSettings />
           <br />
