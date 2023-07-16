@@ -116,7 +116,7 @@ const Login = () => {
             </p>
             <p>
               Organize your ideas, embark on new adventures, and unleash your
-              creativity upon the page.{" "}
+              creativity upon the page.
             </p>
             <p>Welcome to a world of boundless inspiration.</p>
           </div>
