@@ -470,18 +470,6 @@ body,
   margin-top: 1%;
 }
 
-@media screen and (max-width: 755px) {
-  .login-background {
-    background-size: cover;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .LoginPage {
-    background-image: none;
-  }
-}
-
 .inputFields {
   display: flex;
   flex-direction: column;
@@ -525,12 +513,6 @@ body,
   border: none;
 }
 
-/* .button-container .main-button:hover {
-  background-color: #fff;
-  color: #2a1b18;
-  border: none;
-} */
-
 .button-container .google-button {
   background-color: #ffffff4e;
   color: #2a1b18;
@@ -564,6 +546,34 @@ body,
 
 .info-text p {
   line-height: 28px;
+}
+
+@media screen and (max-width: 755px) {
+  .login-background {
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .LoginPage {
+    background-image: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .info-text {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+  .form-text .form-group {
+    margin-bottom: 0.5rem;
+  }
+  .form-label {
+    font-size: 1.2rem;
+  }
+  .LoginPage {
+    margin-top: 2rem;
+  }
 }
 
 /* RELATIONSHIPS */
